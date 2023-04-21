@@ -7,15 +7,15 @@
  
  > Authors: [Aditya Surapaneni](https://github.com/AdityaS1426), [Ashwin Ramaseshan](https://github.com/Ashwin987)
 
-## Project Description
+# Project Description
 
-# Why is it important or interesting to you?
+## Why is it important or interesting to you?
 
-# What languages/tools/technologies do you plan to use?
+## What languages/tools/technologies do you plan to use?
 
-# What will be the input/output of your project?
+## What will be the input/output of your project?
 
-What are the features that the project provides?
+## What are the features that the project provides?
  
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project.)
