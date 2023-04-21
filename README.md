@@ -7,20 +7,15 @@
  
  > Authors: [Aditya Surapaneni](https://github.com/AdityaS1426), [Ashwin Ramaseshan](https://github.com/Ashwin987)
 
-> # Project Description
+# Project Description
 
 ## Why is it important or interesting to you?
-Super Smash Bros is considered one of the most iconic and influential video games of all time, and it is interesting and important for several reasons. It is essentially a fighting game that features various Nintendo characters such as Mario,Luigi, Peach and many others. Super Smash Bros is also a multiplayer that allows the user to battle with friends and family. This topic is interesting for our group as we have all played video games as children and think it is pretty cool that we are building one from scratch on our own for this project.
+
 ## What languages/tools/technologies do you plan to use?
 
 ## What will be the input/output of your project?
 
 ## What are the features that the project provides?
- 
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project.)
- > * What will be the input/output of your project?
- > * What are the features that the project provides? 
  
  > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
  > ## Phase II
