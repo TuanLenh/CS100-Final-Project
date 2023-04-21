@@ -11,7 +11,7 @@
 
 ## Why is it important or interesting to you?
 
-djjd
+Super Smash Bros is considered one of the most iconic and influential video games of all time, and it is interesting and important for several reasons. It is essentially a fighting game that features various Nintendo characters such as Mario,Luigi, Peach and many others. Super Smash Bros is also a multiplayer that allows the user to battle with friends and family. This topic is interesting for our group as we have all played video games as children and think it is pretty cool that we are building one from scratch on our own for this project.
 
 ## What languages/tools/technologies do you plan to use?
 
