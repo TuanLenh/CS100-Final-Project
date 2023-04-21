@@ -7,7 +7,7 @@
  
  > Authors: [Aditya Surapaneni](https://github.com/AdityaS1426), [Ashwin Ramaseshan](https://github.com/Ashwin987)
 
-# Project Description
+> # Project Description
 
 ## Why is it important or interesting to you?
 
