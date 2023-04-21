@@ -15,6 +15,8 @@ Super Smash Bros is considered one of the most iconic and influential video game
 
 ## What languages/tools/technologies do you plan to use?
 
+There are various tools our project group will utilize throughout the process. Visual Studio Code will be utilized as the basis for the coding portion of the project; all of our code will be managed in this tool, and its resources make it useful to collaborate. We will utilize GitHub as a remote repository for our project, which is where will push/pull our code to. Git will obviously be used to connect VS Code with GitHub, and C++ will be the primary programming language used in the project.
+
 ## What will be the input/output of your project?
 
 ## What are the features that the project provides?
