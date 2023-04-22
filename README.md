@@ -5,7 +5,7 @@
 
 # Super Smash Bros. RPG
  
- > Authors: [Aditya Surapaneni](https://github.com/AdityaS1426), [Ashwin Ramaseshan](https://github.com/Ashwin987)
+ > Authors: [Aditya Surapaneni](https://github.com/AdityaS1426), [Ashwin Ramaseshan](https://github.com/Ashwin987), [Juliana Ho](https://github.com/Juliana06029), [Tuan Lenh](https://github.com/TuanLenh)
 
 # Project Description
 
