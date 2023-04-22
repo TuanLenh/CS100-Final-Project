@@ -20,6 +20,8 @@ There are various tools our project group will utilize throughout the process. V
 ## What will be the input/output of your project?
 
 ## What are the features that the project provides?
+
+User has up to 10 characters with different stats and skill sets to choose for 2 game mode which are single player mode and 2-player mode. In single player mode, user can select a certain number of characters and battle a boss. Each time a boss is defeated, player can choose to move on to the next floor and battle a stronger boss. Each user will receive a score for each run of the game and a leaderscoreboard will show users with highest score. In 2-player mode, 2 users can pick two character and battle each other. Whose charater's HP(health point) reduces to zero first will lose.  
  
  > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
  > ## Phase II
