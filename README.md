@@ -13,7 +13,7 @@
 
 Super Smash Bros. is considered one of the most iconic, influential video games of all time, capturing the hearts of many for generations. It's a crossover fighting game (developed by Nintendo) that features numerous characters (such as Mario, Luigi, and Bowser) with special powers, unique statistics, and level-up abilities. One of the best features of the game is its multiplayer aspet; it allows users to battle with family, friends, and other individuals. After playing this game for hours upon hours as children, it's extremely appealing to create a simpler text-based terminal version of the game for this project.
 
-## What languages/tools/technologies do you plan to use?
+## What languages/tools/technologies does our team plan to use?
 
 There are various tools our group will utilize throughout the process of developing our project. 
 
@@ -25,7 +25,7 @@ There are various tools our group will utilize throughout the process of develop
 
 * C++ - C++ is a high-level programming language that was developed in the late-1970s to the early-1980s by Bjarne Stroustrup. It's used in a wide variety of applications, and will be the basis of the Super Smash Bros. RPG. C++ was chosen as the primary programming lanaguage due to familiarity with the language by all of the team members.
 
-## What will be the input/output of your project?
+## What will be the input/output of our project?
 
 User can enter number from 1 to 10 to choose characters. User may also enter 1 to 4 during battle to choose a move . There are 4 moves for user to choose and those are using an attack skill, defense skill, ultimate skill, and items in inventory. All attack skills will inflict damage on opponent while defense skill will reduce damage taken by the opponent. Ultimate skills and items can either be stronger attack skills, defense skills or self-buff.
 
