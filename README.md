@@ -11,11 +11,19 @@
 
 ## Why is it important or interesting to you?
 
-Super Smash Bros is considered one of the most iconic and influential video games of all time, and it is interesting and important for several reasons. It is essentially a fighting game that features various Nintendo characters such as Mario,Luigi, Peach and many others. Super Smash Bros is also a multiplayer that allows the user to battle with friends and family. This topic is interesting for our group as we have all played video games as children and think it is pretty cool that we are building one from scratch on our own for this project.
+Super Smash Bros. is considered one of the most iconic, influential video games of all time, capturing the hearts of many for generations. It's a crossover fighting game (developed by Nintendo) that features numerous characters (such as Mario, Luigi, and Bowser) with special powers, unique statistics, and level-up abilities. One of the best features of the game is its multiplayer aspet; it allows users to battle with family, friends, and other individuals. After playing this game for hours upon hours as children, it's extremely appealing to create a simpler text-based terminal version of the game for this project.
 
 ## What languages/tools/technologies do you plan to use?
 
-There are various tools our project group will utilize throughout the process. Visual Studio Code will be utilized as the basis for the coding portion of the project; all of our code will be managed in this tool, and its resources make it useful to collaborate. We will utilize GitHub as a remote repository for our project, which is where will push/pull our code to. Git will obviously be used to connect VS Code with GitHub, and C++ will be the primary programming language used in the project.
+There are various tools our group will utilize throughout the process of developing our project. 
+
+* Visual Studio Code - Visual Studio Code (also known as VS Code) is a source-code editor developed by Microsoft. The majority of our coding will be performed using this program, as it allows for the inclusion of a wealth of flexible extensions to aid developers with projects. The user interface is extremely simple to use, and access to a terminal is very helpful as well.
+
+* Git - Git will be utilized as our version control system, or VCS. Git allows users to manage files with ease when collaborating on projects, and it's extremely useful for non-linear workflows.
+
+* GitHub - GitHub is an Internet-based hosting service for software development/version control using Git. GitHub acts like a remote repository, assisting in collaborative development. GitHub will be very helpful, as it will allow our team to work on different aspects of the project simultaneously.
+
+* C++ - C++ is a high-level programming language that was developed in the late-1970s to the early-1980s by Bjarne Stroustrup. It's used in a wide variety of applications, and will be the basis of the Super Smash Bros. RPG. C++ was chosen as the primary programming lanaguage due to familiarity with the language by all of the team members.
 
 ## What will be the input/output of your project?
 
