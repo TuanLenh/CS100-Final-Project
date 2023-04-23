@@ -19,6 +19,8 @@ There are various tools our project group will utilize throughout the process. V
 
 ## What will be the input/output of your project?
 
+User can enter number from 1 to 10 to choose characters. User may also enter 1 to 4 during battle to choose a move . There are 4 moves for user to choose and those are using an attack skill, defense skill, ultimate skill, and items in inventory. All attack skills will inflict damage on opponent while defense skill will reduce damage taken by the opponent. Ultimate skills and items can either be stronger attack skills, defense skills or self-buff.
+
 ## What are the features that the project provides?
 
 User has up to 10 characters with different stats and skill sets to choose for 2 game mode which are single player mode and 2-player mode. In single player mode, user can select a certain number of characters and battle a boss. Each time a boss is defeated, player can choose to move on to the next floor and battle a stronger boss. Each user will receive a score for each run of the game and a leaderscoreboard will show users with highest score. In 2-player mode, 2 users can pick two character and battle each other. Any user who has their character's HP(health point) reduces to zero first will lose.  
