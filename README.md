@@ -42,10 +42,11 @@ There are various tools our group will utilize throughout the process of develop
 
 There are a variety of features present in this program:
 
+* The user will have the ability to input a username of their choice. (This will mainly be used for leaderboard purposes.)
 * The user has up to 10 characters to choose from, with different statistics/skill sets.
 * There will be 4 moves to choose from: attack, defend, ultimate skill, and inventory item.
 * The user will be able to choose from two game modes: singleplayer mode, where the user can battle AI bosses with a choice of character, and multiplayer mode, where two users can battle each other for a chance at victory. 
-* In singleplayer mode, each user will receive a score for each run of the game, and a leaderscoreboard will display the top five users with the highest scores.
+* In singleplayer mode, each user will receive a score for each run of the game based on the number of bosses defeated, and a leaderboard will display the top five users with the highest scores.
 * In multiplayer mode, the winner will be determined by whichever character reaches zero HP (health points) last.
 
  > ## Phase II
