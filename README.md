@@ -34,11 +34,14 @@ There are various tools our group will utilize throughout the process of develop
 
 ## What will be the input/output of our project?
 
-User can enter number from 1 to 10 to choose characters. User may also enter 1 to 4 during battle to choose a move . There are 4 moves for user to choose and those are using an attack skill, defense skill, ultimate skill, and items in inventory. All attack skills will inflict damage on opponent while defense skill will reduce damage taken by the opponent. Ultimate skills and items can either be stronger attack skills, defense skills or self-buff.
+* Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. The user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory.
+
+* Output - All attack skills will inflict damage on opponents, while defense skills will reduce damage inflicted by the opponent. Ultimate skills and inventory items can consist of stronger attack skills, stronger defense skills, or a self-buff. All of these moves will result in a health percentage as an output, and, of course, the resulting output can vary widely depending on the combination of attacks, defenses, and powers used; specifically, each move will affect the health of the character in a different manner. Once the health of a character reaches zero, the game will end, displaying the winner of the game.
 
 ## What are the features that the project provides?
 
-User has up to 10 characters with different stats and skill sets to choose for 2 game mode which are single player mode and 2-player mode. In single player mode, user can select a certain number of characters and battle a boss. Each time a boss is defeated, player can choose to move on to the next floor and battle a stronger boss. Each user will receive a score for each run of the game and a leaderscoreboard will show users with highest score. In 2-player mode, 2 users can pick two character and battle each other. Any user who has their character's HP(health point) reduces to zero first will lose.  
+User has up to 10 characters with different stats and skill sets to choose for 2 game mode which are single player mode and 2-player mode. In single player mode, user can select a certain number of characters and battle a boss. Each time a boss is defeated, player can choose to move on to the next floor and battle a stronger boss. Each user will receive a score for each run of the game and a leaderscoreboard will show users with highest score. In 2-player mode, 2 users can pick two character and battle each other. Any user who has their character's HP(health point) reduces to zero first will lose.
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
