@@ -40,7 +40,13 @@ There are various tools our group will utilize throughout the process of develop
 
 ## What are the features that the project provides?
 
-User has up to 10 characters with different stats and skill sets to choose for 2 game mode which are single player mode and 2-player mode. In single player mode, user can select a certain number of characters and battle a boss. Each time a boss is defeated, player can choose to move on to the next floor and battle a stronger boss. Each user will receive a score for each run of the game and a leaderscoreboard will show users with highest score. In 2-player mode, 2 users can pick two character and battle each other. Any user who has their character's HP(health point) reduces to zero first will lose.
+There are a variety of features present in this program:
+
+* The user has up to 10 characters to choose from, with different statistics/skill sets.
+* There will be 4 moves to choose from: attack, defend, ultimate skill, and inventory item.
+* The user will be able to choose from two game modes: singleplayer mode, where the user can battle AI bosses with a choice of character, and multiplayer mode, where two users can battle each other for a chance at victory. 
+* In singleplayer mode, each user will receive a score for each run of the game, and a leaderscoreboard will display the top five users with the highest scores.
+* In multiplayer mode, the winner will be determined by whichever character reaches zero HP (health points) last.
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
