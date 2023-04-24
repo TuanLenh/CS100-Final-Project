@@ -8,7 +8,7 @@
 
 ## General Description
 
-The Super Smash Bros. text-based RPG is a terminal-based role-playing game in which the user is able to select betweeen ten different characters at the start of the game. The user will be able to choose a single-player mode, where the user will battle an AI character, or a multiplayer mode, where two users can battle each other locally. Each character features unique attacks, various defense tactics, and distinctive health statistics, and every attack/defense move will affect the health of the each character in a different manner. The game comes to an end when a character's health reaches "zero", at which point the remaining character is declared a winner.
+The Super Smash Bros. text-based RPG is a terminal-based role-playing game in which the user is able to select betweeen ten different Nintendo-themed characters at the start of the game. The user will be able to choose a single-player mode, where the user will battle an AI character, or a multiplayer mode, where two users can battle each other locally. Each character features unique attacks, various defense tactics, and distinctive health statistics, and every attack/defense move will affect the health of the each character in a different manner. The game comes to an end when a character's health reaches "zero", at which point the remaining character is declared a winner.
 
 ## Why is this project important or interesting to us?
 
