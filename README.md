@@ -48,7 +48,7 @@ There are a variety of features present in this program:
 * The user will be able to choose from two game modes: single-player mode, where the user can battle AI bosses with a choice of character, and multiplayer mode, where two users can battle each other for a chance at victory. 
 * In single-player mode, each user will receive a score for each run of the game based on the number of bosses defeated, and a leaderboard will display the top five users with the highest scores.
 * In multiplayer mode, the winner will be determined by whichever character reaches zero HP (health points) last.
-* There will be a game score display option. Users can see the top 5 highest scores for each mode.
+* There will be a game score display option. Users can see top 5 highest scores for each mode.
 * There will be quit and restart options during the match.
 
  > ## Phase II
