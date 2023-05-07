@@ -79,7 +79,9 @@ In Multiplayer Mode, two users can pick two different characters and battle each
 
 Here is the link to the Screen Layout document: https://docs.google.com/document/d/1qu0Qhb_C_aOsg948D_91QyLSxDGLezo956u34qaNToo/edit?usp=sharing
 
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+User is greeted with the main menu when the game starts, user has three options to choose from. User can enter "1" for Single-Player Mode, "2" for Multiplayer Mode and "3" for quitting program. In Single Player Mode, user can enter their name and pick a number from 1-10 to choose a character in Character Choosing Screen. After choosing the character, user is moved to the Battle Screen where they can enter a number from 1-4 to control the character. In the Victory Screen, user can view their score from the previous battle and their total score. Then user can enter "C" and move to Leaderboard Screen for Vicotry where user can enter "1" or "2" to continue battling or quit the game. In case the user loses the game, they are moved to Defeat Screen and Leaderboard Screen for Loser where they can only enter "C" to return to Main Menu.
+
+In Multiplayer Mode, both users can enter their name and pick characters through the Multiplayer Menu, Second Player Name, First Character Choosing Screen, Second Character Choosing Screen. Then, both users are prompted to the Battle Screen where they can enter a number form 1-4 to perfrom actions. The game ends when a character's health point reduces to zero and the Battle End Screen appears to announce the winner. Users are asked to enter "C" to return to Main Menu.
 
 ## Class Diagram
 
