@@ -65,7 +65,13 @@ There are a variety of features present in this program:
 ## User Interface Specification
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
-## Navigation Diagram
+### Navigation Diagram
+
+The Navigation Diagram below demonstrates the flow of the program. User is prompted with three options in the menu screen which are Single-Player Mode, Multiplayer and Quit program.
+
+In Singple-Player Mode, user can pick one from the set of 10 characters and control them in a battle with the boss. If the user wins the battle, user is moved to the victory/score screen where user can see their score from the last battle. Subquently, the leaderboard screen appears to show the top five highest scores. Then, user can decide to continue battle a stronger boss or quit the game. If the user loses a battle, they return the menu screen and can restart the game.
+
+In Multiplayer Mode, two users can pick two different characters and battle each other. First user whose character's health point reduces to zero loses the battle while the other user wins the battle. After the battle, users are prompted with the winner congratualation screen, then return to the main menu
 
 ![Screenshot 2023-05-07 115146](https://user-images.githubusercontent.com/79182581/236697085-34d4d867-dc9d-42fd-b595-0d1c7f47561f.png)
 
