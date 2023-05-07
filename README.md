@@ -73,6 +73,16 @@ There are a variety of features present in this program:
 
 ## Class Diagram
 
+The UML Class Diagram below consists of various important classes, each of which represnt a vital part of the program.
+
+There are thirteen different derived classes which inherit from a "Character" base class. These thirteen base classes consist of three "Boss" characters, which the player will fight during the single player mode of the RPG, and ten other characters, which can be chosen by the user to fight the bosses in the single player mode or fight against friends in multi player mode. As can be seen, these base classes inherit the "healthPoints" variable from the base class, as well as setter/getter functions for the "healthPoints" variable. The base class also consists of two virtual functions, which will be modified in the derived classes based on the abilities/skills of each character.
+
+The "Player" class handles all the details regarding the user, such as their user name, theas well as the score they will receive, along with the appropriate setter/getter functions. This class will be essential for the main menu of the program, as the user will need to interact with the main menu constantly.
+
+There's also a "Game Engine" class, which will essentially handle all of the logic/rules of the game, such as when how each character's attack/defense moves will affect another character's corresponding moves, when the game will end based on the mode (single player or multi player) chosen by the player, how a score will be assigned to each player, etc. This class will utilize instances of Character, as well as Player objects, as these need to utilized in order to set up the logic for the game.
+
+In terms of the relationships between the classes, inheritance is definitely apparent, as the character/boss derived classes inherit from a generic "Character" base class. Composition is also present in the program, as the "Game Engine" class is composed of various characters; if the game engine was deleted, these characters would not have any functionality, rendering them useless. The "Game Engine" class is also composed of "Player" class objects, and if the "Game Engine" class was deleted, these "Player" objects would be rendered useless. Finally, there's an aggregation relationship between the "Player" class and the "Character" class, as these types of objects can technically exist separately without too many negative effects.
+
 ![CS100 - UML Class Diagram](https://user-images.githubusercontent.com/129999279/236694987-5354d22c-dfb3-403f-ba4a-4e34971bc4f3.png)
  
  > ## Phase III
