@@ -51,27 +51,13 @@ There are a variety of features present in this program:
 * There will be a game score display option. Users can see top 5 highest scores for each mode.
 * There will be quit and restart options during the match.
 
- > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
-## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
+## Navigation Diagram
 
-### Navigation Diagram
+The Navigation Diagram below demonstrates the flow of the program. The user is prompted with three options in the menu screen, which are single player mode, multi player mode, and an option to quit the program.
 
-The Navigation Diagram below demonstrates the flow of the program. User is prompted with three options in the menu screen which are Single-Player Mode, Multiplayer and Quit program.
+In single player mode, the user can pick one of the ten characters, and this character will be used in a battle with the various bosses. If the user wins the battle, the user is moved to the victory/score screen, where the user can see their score from the last battle. Subsequently, the leaderboard screen displays the top five highest scores of all time. After reaching this screen, the user can decide to continue to battle a stronger boss or quit the game. If the user loses a battle, the user will be brought to the menu screen, and can restart the game if desired.
 
-In Singple-Player Mode, user can pick one from the set of 10 characters and control them in a battle with the boss. If the user wins the battle, user is moved to the victory/score screen where user can see their score from the last battle. Subquently, the leaderboard screen appears to show the top five highest scores. Then, user can decide to continue battle a stronger boss or quit the game. If the user loses a battle, they return the menu screen and can restart the game.
-
-In Multiplayer Mode, two users can pick two different characters and battle each other. First user whose character's health point reduces to zero loses the battle while the other user wins the battle. After the battle, users are prompted with the winner congratualation screen, then return to the main menu
+In multi player mode, two users can pick two different characters in order to battle each other. The first player to lose all of the health points for their character loses the battle, while the remaining character wins the battle. After the battle, the users are prompted with the victory screen, and are then returned to the main menu.
 
 ![Screenshot 2023-05-07 115146](https://user-images.githubusercontent.com/79182581/236697085-34d4d867-dc9d-42fd-b595-0d1c7f47561f.png)
 
