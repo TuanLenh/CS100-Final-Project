@@ -81,7 +81,7 @@ There's also a "Game Engine" class, which will essentially handle all of the log
 
 In terms of the relationships between the classes, inheritance is definitely apparent, as the character/boss derived classes inherit from a generic "Character" base class. Composition is also present in the program, as the "Game Engine" class is composed of various characters; if the game engine was deleted, these characters would not have any functionality, rendering them useless. The "Game Engine" class is also composed of "Player" class objects, and if the "Game Engine" class was deleted, these "Player" objects would be rendered useless. Finally, there's an aggregation relationship between the "Player" class and the "Character" class, as these types of objects can technically exist separately without too many negative effects.
 
-![CS100 - UML Class Diagram]([https://user-images.githubusercontent.com/129999279/236696661-a3e8ce93-7ff2-48ab-bd62-eb00154ddd1e.png](https://drive.google.com/drive/u/2/my-drive))
+![CS100 - UML Class Diagram](https://drive.google.com/drive/u/2/my-drive)
 https://user-images.githubusercontent.com/129999279/236696661-a3e8ce93-7ff2-48ab-bd62-eb00154ddd1e.png
 
  > ## Phase III
