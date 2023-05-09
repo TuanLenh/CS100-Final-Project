@@ -81,7 +81,7 @@ There's also a "Game Engine" class, which will essentially handle all of the log
 
 In terms of the relationships between the classes, inheritance is definitely apparent, as the character/boss derived classes inherit from a generic "Character" base class. Composition is also present in the program, as the "Game Engine" class is composed of various characters; if the game engine was deleted, these characters would not have any functionality, rendering them useless. The "Game Engine" class is also composed of "Player" class objects, and if the "Game Engine" class was deleted, these "Player" objects would be rendered useless. Finally, there's an aggregation relationship between the "Player" class and the "Character" class, as these types of objects can technically exist separately without too many negative effects.
 
-![CS100 - UML Class Diagram](https://user-images.githubusercontent.com/129999279/236696661-a3e8ce93-7ff2-48ab-bd62-eb00154ddd1e.png)
+![CS100 - UML Class Diagram](![UML diagram](https://user-images.githubusercontent.com/79182581/237007095-f9d2cd9c-a106-4a8a-a0eb-e2954793fab9.png))
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
