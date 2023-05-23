@@ -83,6 +83,10 @@ In terms of the relationships between the classes, inheritance is definitely app
 
 ![CS100 - UML Class Diagram](https://user-images.githubusercontent.com/79182581/237007095-f9d2cd9c-a106-4a8a-a0eb-e2954793fab9.png)
 
+## Class Diagram (Revised)
+
+<img width="904" alt="CS100 - UML Class Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/42199126-aa8a-4261-89da-4b33baa26e3b">
+
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
  
