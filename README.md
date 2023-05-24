@@ -85,6 +85,12 @@ In terms of the relationships between the classes, inheritance is definitely app
 
 ## Class Diagram (Revised)
 
+The revised UML class diagram below is vastly different from the original UML class diagram above. Many of the classes were simplified for a better overall program structure, and the specifics of each class are more detailed.
+
+The first, and possibly most important, class is the "Character" class. This class handles the various characteristics of each character, such as the character's name, attack, defense, and speed. There are getters/setters for each of these characteristics, and another function to determine whether the character is alive or not.
+
+The "Character" class is composed of three different classes: the "UltimateSkill" class, the "GameEngine" class, and the "ReturnStat" class. The "UltimateSkill" class is responsible for handling the ultimate skill of each character; there are a few different ones depending on each character, like a healing power, an increased attack, an increased defense, etc. The "GameEngine" class handles the attack for each character, which is slightly different depending on the character chosen due to the different attack statistics. Finally, the "ReturnStat" class ensures the statistics for each character are returned to their original levels after a battle is complete. The "composition" association is extremely important here, as if the "Character" class were deleted, there would be no use for "UltimateSkill", "GameEngine", and "ReturnStat"; essentially, these three classes would be useless, as they require Character objects for proper functionality.
+
 <img width="904" alt="CS100 - UML Class Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/42199126-aa8a-4261-89da-4b33baa26e3b">
 
  > ## Phase III
