@@ -2,7 +2,7 @@
 #include "Character.h"
 
 using namespace std;
-
+    // constructor
     Character::Character(int charID, const string &charName , int charHealth, int charAttack, int charDefense, int charSpeed, string charStatus){
         ID = charID;
         name = charName;
@@ -13,8 +13,17 @@ using namespace std;
         status = charStatus;
     }
 
+    // get functions
     int Character::getID() const{
         return ID;
+    }
+
+    int Character::getAttack() const{
+        return attackStat;
+    }
+
+    int Character::getDefense() const{
+        return defenseStat;
     }
 
  	const string & Character::getName() const{
@@ -25,29 +34,33 @@ using namespace std;
         return health;
     }
 
+    string Character::getStatus() const{
+        return status;
+    }
+
+    // set functions
     void Character::setHealth(int num){
-        health = health - num;
+        health = num;
     }
 
     void Character::setAttack(int num){
-        attackStat = attackStat + num;
+        attackStat = num;
     }
 
     void Character::setDefense(int num){
-        defenseStat = defenseStat + num;
+        defenseStat = num;
     }
 
     void Character::setStatus(string newStatus){
         status = newStatus;
     }
-
-    string Character::getStatus() const{
-        return status;
-    }
     
+    // check character is alive or not
  	bool Character::isAlive() const{
         if(getHealth() <= 0){
             return false;
         }
         return true;
     }
+
+    

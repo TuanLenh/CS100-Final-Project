@@ -5,7 +5,7 @@
 using namespace std;
 
 class Character{
- 	protected:
+ 	private:
 		int ID;
 		string name;
 		int health;
@@ -14,17 +14,21 @@ class Character{
 		int speedStat;
 		string status;
 
-
  	public:
 		Character(int ID, const string &name , int health, int attackStat, int defenseStat, int speedStat, string status);
-		int getID() const;
-		const string & getName() const;
-		int getHealth() const;
+		
 		void setHealth(int num);
 		void setAttack(int num);
 		void setDefense(int num);
 		void setStatus(string newStatus);
+
+		const string & getName() const;
+		int getID() const;
+		int getHealth() const;
+		int getAttack() const;
+		int getDefense() const;
 		string getStatus() const;
+
 		bool isAlive() const;
 };
 
