@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class GameEngine{
+class AttackFunction{
     public:
         void attackFunction(Character& char1, Character& char2, int counter);
 };

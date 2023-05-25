@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void GameEngine::attackFunction(Character& char1, Character& char2, int counter){
+void AttackFunction::attackFunction(Character& char1, Character& char2, int counter){
     if(counter == 0){
         int damage = char1.getAttack() * (100.0 / (100.0 + char2.getDefense()));
         char2.setHealth(char2.getHealth() - damage);
