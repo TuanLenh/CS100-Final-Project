@@ -95,7 +95,7 @@ The "Leaderboard" class handles the functionality for the leaderboard in the sin
 
 Finally, the "ScreenLayouts" class is responsible for printing the various prompts our program utilizes. It prints the enus for each type of game mode, the battle actions, the victory screens, and the defeat screens.
 
-<img width="904" alt="CS100 - UML Class Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/42199126-aa8a-4261-89da-4b33baa26e3b">
+<img width="913" alt="CS100 - UML Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/b92da672-89fd-4a77-b571-55becfb7e72a">
 
 ## SOLID Principles
 
