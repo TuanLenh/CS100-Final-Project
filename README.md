@@ -59,7 +59,7 @@ In single player mode, the user can pick one of the ten characters, and this cha
 
 In multi player mode, two users can pick two different characters in order to battle each other. The first player to lose all of the health points for their character loses the battle, while the remaining character wins the battle. After the battle, the users are prompted with the victory screen, and are then returned to the main menu.
 
-![Screenshot 2023-05-07 115146](https://user-images.githubusercontent.com/79182581/236697085-34d4d867-dc9d-42fd-b595-0d1c7f47561f.png)
+![Screenshot 2023-05-07 115146]!(https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/79182581/b75fcdb3-6299-4a9e-9d24-0f22a55bf37d)
 
 ## Screen Layouts
 
