@@ -97,6 +97,10 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
 
 <img width="904" alt="CS100 - UML Class Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/42199126-aa8a-4261-89da-4b33baa26e3b">
 
+## SOLID Principles
+
+* The UML diagram was updated to include a "ScreenLayout" class, which adheres to to the Single Responsibility Principle. Previously, the various different "text output" functions were combined with classes responsible for manipulating data, but with the creation of this new class, each respective class is in charge of its own functionality. In seaparating the responsibilities of each class, the code is more organized, easier to understand, and less cluttered, which aids in further development of the program.
+
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
  
