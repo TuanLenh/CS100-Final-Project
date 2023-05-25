@@ -30,6 +30,16 @@ ADD_EXECUTABLE(testUltimateClass
     Character.cpp 
 )
 
+ADD_EXECUTABLE(runGame
+    main.cpp
+    Character.cpp
+    ReturnStat.cpp
+    ScreenLayout.cpp
+    Ultimate.cpp
+    Leaderboard.cpp
+    attackfunction.cpp
+)
+
 TARGET_LINK_LIBRARIES(testReturnStatClass gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testReturnStatClass PRIVATE gtest_disable_pthreads=ON)
 
