@@ -2,9 +2,10 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 ADD_SUBDIRECTORY(googletest)
 
 
-ADD_EXECUTABLE(testattackfunctionClass
+ADD_EXECUTABLE(testAttackFunctionClass
     UnitTest/attackfunction.cpp
     attackfunction.cpp
+    Character.cpp
 )
 
 ADD_EXECUTABLE(testLeaderboardClass
@@ -23,6 +24,12 @@ ADD_EXECUTABLE(testCharacterClass
     Character.cpp
 )
 
+ADD_EXECUTABLE(testUltimateClass
+    UnitTest/UltimateSkillTest.cpp
+    Ultimate.cpp
+    Character.cpp 
+)
+
 TARGET_LINK_LIBRARIES(testReturnStatClass gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testReturnStatClass PRIVATE gtest_disable_pthreads=ON)
 
@@ -32,5 +39,8 @@ TARGET_COMPILE_DEFINITIONS(testCharacterClass PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testLeaderboardClass gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testLeaderboardClass PRIVATE gtest_disable_pthreads=ON)
 
-TARGET_LINK_LIBRARIES(testattackFunctionClass gtest gtest_main)
-TARGET_COMPILE_DEFINITIONS(testattackFunctionClass PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testAttackFunctionClass gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testAttackFunctionClass PRIVATE gtest_disable_pthreads=ON)
+
+TARGET_LINK_LIBRARIES(testUltimateClass gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testUltimateClass PRIVATE gtest_disable_pthreads=ON)

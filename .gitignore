@@ -5,3 +5,6 @@ cmake_install.cmake
 lib/
 testReturnStatClass
 testCharacterClass
+testAttackFunctionClass
+testUltimateClass
+testLeaderboardClass
