@@ -2,5 +2,6 @@ Makefile
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-testReturnStatClass
 lib/
+testReturnStatClass
+testCharacterClass
