@@ -102,27 +102,6 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
 * The UML diagram was updated to include a "ScreenLayout" class, which adheres to to the Single Responsibility Principle. Previously, the various different "text output" functions were combined with classes responsible for manipulating data, but with the creation of this new class, each respective class is in charge of its own functionality. In seaparating the responsibilities of each class, the code is more organized, easier to understand, and less cluttered, which aids in further development of the program.
 * The modification of the UML diagram also accounted for the implementation of the Dependency Inversion Principle. Initially, there were separate classes for each character in the game, with a base "Character" class that utilized the low-level classes as parameters. However, this violates the DIP, so the low-level classes were eliminated in favor of a single "Character" class with its own implementation of each character. This change allowed for the structure of the program to become much less complicated, and allows for the code to be much more organized. There is no need to worry about changing multiple classes to fix a bug; instead, changes can be easily made to the single "Character" class, which makes the process much less challenging.
 * The Open-Closed Principle was also accounted for in the new structure of the program. The classes were created with a specific purpose in mind, and the layout ensures no classes or functions will need to be modified in the future for additional features. For instance, a single player mode is already implemented into the program, but a multi player mode is still necessary. To add this feature, a "Multi Player" class can simply be added, and utilize the other classes (Character, ScreenLayout, etc.) to be fully functional. In designing the program in this manner, expansion should not be an issue when it comes to the coding process.
-
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
