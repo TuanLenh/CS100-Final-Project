@@ -28,7 +28,7 @@ class Character{
 		int getAttack() const;
 		int getDefense() const;
 		string getStatus() const;
-
+		int getSpeed() const;
 		bool isAlive() const;
 };
 

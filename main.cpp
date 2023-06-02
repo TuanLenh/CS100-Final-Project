@@ -11,9 +11,9 @@
 using namespace std;
 
 // print name, hp and status of character
-void characterInformation(Character user, Character boss){
+void characterInformation(Character user, Character user2){
     cout << user.getName() << "'s HP: " << user.getHealth() << " / Status: " << user.getStatus() << endl;
-    cout << boss.getName() << "'s HP: " << boss.getHealth() << " / Status: " << boss.getStatus() << endl << endl; 
+    cout << user2.getName() << "'s HP: " << user2.getHealth() << " / Status: " << user2.getStatus() << endl << endl; 
 }
 
 // return character based on user's input
@@ -48,31 +48,9 @@ Character selectChar(Character c1, Character c2, Character c3, Character c4, Cha
     return c10;
 }
 
-// check for valid input during battle
-int checkUserActChoice(int num){
-    while((num != 1 and num != 2 and num != 3 and num != 4) or (cin.fail())){
-        cout << "Please enter again: ";
-        cin.clear();
-        cin.ignore(256,'\n');
-        cin >> num;
-    }
-    return num;
-}
-
 // check for valid main menu input
 int checkMainMenuInput(int num){
     while((num != 1 and num != 2 and num != 3) or (cin.fail())){
-        cout << "Please enter again: ";
-        cin.clear();
-        cin.ignore(256,'\n');
-        cin >> num;
-    }
-    return num;
-}
-
-// check for valid end game input
-int checkEndGameInput(int num){
-    while((num != 1 and num != 2) or cin.fail()){
         cout << "Please enter again: ";
         cin.clear();
         cin.ignore(256,'\n');
@@ -105,6 +83,199 @@ int checkCharacterSelectionInputTwo(int num, int firstNum){
     return num;
 }
 
+// check for valid input during battle
+int checkUserActChoice(int num){
+    while((num != 1 and num != 2 and num != 3 and num != 4) or (cin.fail())){
+        cout << "Please enter again: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> num;
+    }
+    return num;
+}
+
+// check for valid input during battle in Multiplayers mode
+int checkUserActChoice2(int num){
+    while((num != 1 and num != 2) or (cin.fail())){
+        cout << "Please enter again: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> num;
+    }
+    return num;
+}
+
+// check for valid end game input
+int checkEndGameInput(int num){
+    while((num != 1 and num != 2) or cin.fail()){
+        cout << "Please enter again: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> num;
+    }
+    return num;
+}
+
+void bossAttack(Character & user, Character & boss, int defenseCounter, int turn, int endStatus){
+    AttackFunction gameAction;
+    // Boss simply attack
+    if(boss.getStatus() == "Normal"){
+        cout << boss.getName() << " attacks." << endl;
+        gameAction.attackFunction(boss, user, defenseCounter);
+        characterInformation(user, boss);
+    }
+    // If Boss is under effect, it can't attack user
+    else if(endStatus > turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
+        cout << boss.getName() << " is under status aliment" << endl;
+        characterInformation(user, boss);
+    }
+    // Boss wakes up based on calculation above and attack user
+        else if(endStatus <= turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
+        boss.setStatus("Normal");
+        cout << boss.getName() << " has awaken" << endl;
+        cout << boss.getName() << " attacks." << endl;
+        gameAction.attackFunction(boss, user, defenseCounter);
+        characterInformation(user, boss);
+    }
+}
+
+void userAction(Character & user, Character & boss, int & defenseCounter, int & ultiCounter){
+    ScreenLayout output;
+    AttackFunction gameAction;
+    UltimateSkill skill;
+    int userActChoice;
+
+    characterInformation(user, boss);
+    output.battleAction();
+    cin >> userActChoice;
+    userActChoice = checkUserActChoice(userActChoice);
+
+    // attack if user input 1
+    if(userActChoice == 1){
+        cout << "Use attack" << endl;
+        gameAction.attackFunction(user, boss, 0);
+        characterInformation(user, boss);
+    }
+    // defense if user input 2
+    else if(userActChoice == 2){
+        cout << "Use defense" << endl << endl;
+        defenseCounter = 1;
+    }
+    // use ultimate skill if user input 4
+    else if(userActChoice == 4){
+        // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
+        if(ultiCounter == 0){
+            skill.useUltimateSkill(user, boss);
+            characterInformation(user, boss);
+            ++ ultiCounter;
+        }
+        else{
+            cout << "Ultimate Skill is unavailable now! Turn lost" << endl;
+            characterInformation(user, boss);
+        }
+    }
+}
+
+void userAction2(Character & user1, Character & user2, int turn, int endStatus, int & ultiCounter){
+    ScreenLayout output;
+    UltimateSkill skill;
+    AttackFunction gameAction;
+    int userActChoice;
+
+    if(user1.getStatus() == "Normal"){
+        characterInformation(user1, user2);
+        output.MultibattleAction();
+        cin >> userActChoice;
+        userActChoice = checkUserActChoice2(userActChoice);
+
+        // attack if user input 1
+        if(userActChoice == 1){
+            cout << "Use attack" << endl;
+            gameAction.attackFunction(user1, user2, 0);
+            characterInformation(user1, user2);
+        }
+        // use ultimate skill if user input 2
+        else if(userActChoice == 2){
+            // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
+            if(ultiCounter == 0){
+                skill.useUltimateSkill(user1, user2);
+                characterInformation(user1, user2);
+                ++ ultiCounter;
+            }
+            else{
+                cout << "Ultimate Skill is unavailable now! Turn lost" << endl;
+                characterInformation(user1, user2);
+            }
+        }
+    }
+    else if(endStatus > turn and (user1.getStatus() == "Sleeping" or user1.getStatus() == "Paralyzing" or user1.getStatus() == "Frozen")){
+        cout << user1.getName() << " is under status aliment" << endl;
+        characterInformation(user1, user2);
+    }
+    else if(endStatus <= turn and (user1.getStatus() == "Sleeping" or user1.getStatus() == "Paralyzing" or user1.getStatus() == "Frozen")){
+        user1.setStatus("Normal");
+        cout << user1.getName() << " has awaken" << endl;
+        cout << user1.getName() << " attacks." << endl;
+        gameAction.attackFunction(user1, user2, 0);
+        characterInformation(user1, user2);
+    }
+}
+
+void userIsDead(Character & user, Character & boss, int totalScore, int & endGameChoice, Player userPlayer, vector<Player> & leaderBoardVector){
+    ScreenLayout output;
+    Leaderboard leaderBoardFunction;
+    ReturnStat renewStat;
+
+    output.singlePlayerDefeat(totalScore);
+    cin >> endGameChoice;
+    endGameChoice = checkEndGameInput(endGameChoice);
+
+    leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
+    leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
+    leaderBoardFunction.printTopFive(leaderBoardVector);
+
+    renewStat.returnToOriginal(user, boss);
+}
+
+void bossIsDead(Character & user, Character & boss, int totalScore, int thisScore, int & endGameChoice, Player userPlayer, vector<Player> & leaderBoardVector){
+    ScreenLayout output;
+    Leaderboard leaderBoardFunction;
+    ReturnStat renewStat;
+
+    output.singlePlayerVictory(thisScore, totalScore);
+    cin >> endGameChoice;
+    endGameChoice = checkEndGameInput(endGameChoice);
+
+    // update score and print leaderboard
+    leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
+    leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
+    leaderBoardFunction.printTopFive(leaderBoardVector);
+
+    renewStat.returnToOriginal(user, boss);
+}
+
+void finalBossIsDead(Character & user, Character & boss, int totalScore, int thisScore, Player userPlayer, vector<Player> & leaderBoardVector){
+    ScreenLayout output;
+    Leaderboard leaderBoardFunction;
+    ReturnStat renewStat;
+
+    output.singlePlayerVictory(thisScore, totalScore);
+    // update score and print leaderboard
+    leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
+    leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
+    leaderBoardFunction.printTopFive(leaderBoardVector);
+
+    renewStat.returnToOriginal(user, boss);
+}
+
+int firstPlayer(Character playerOne, Character playerTwo) {
+    if (playerOne.getSpeed() > playerTwo.getSpeed())
+    {
+        return 1;
+    }
+    return 2;
+}
+
 int main(){
     // create characters
     Character Mario         (1, "Mario",                 100, 20, 16, 75, "Normal");
@@ -118,15 +289,12 @@ int main(){
     Character Mater         (9, "Mater",                 100, 10, 19, 50, "Normal");
     Character SpongeBob     (10 ,"SpongeBob",            100, 12, 18, 20, "Normal");
 
-    Character Boss1         (11, "Boss level 1",         100, 30, 30, 0, "Normal");
-    Character Boss2         (12, "Boss level 2",         120, 50, 50, 0, "Normal");
-    Character Boss3         (13, "Boss level 3",         140, 70, 70, 0, "Normal");
+    Character Boss1         (11, "Boss level 1",         100, 15, 15, 0, "Normal");
+    Character Boss2         (12, "Boss level 2",         120, 20, 20, 0, "Normal");
+    Character Boss3         (13, "Boss level 3",         140, 25, 25, 0, "Normal");
     
     // apply ReturnStat class and ScreenLayout Class
-    ReturnStat renewStat;
     ScreenLayout output;
-    Leaderboard leaderBoardFunction;
-    AttackFunction gameAction;
     vector<Player> leaderBoardVector(20);
     int userInput;
 
@@ -139,13 +307,13 @@ int main(){
         if(userInput == 1){
             string userName;
             int charNum;
-            UltimateSkill skill;
-            int userActChoice = 0;
+            int endGameChoice = 0;
+
             int turn = 0;
             int endStatus = 0;
+
             int totalScore = 0;
-            int thisScore = 0;
-            int endGameChoice = 0;
+
             int ultiCounter = 0;
             int defenseCounter = 0;
 
@@ -166,51 +334,16 @@ int main(){
                 // print turn, ask for user's choice of action and check for valid input
                 ++ turn;
                 cout << "Turn: " << turn << endl;
-                characterInformation(userChar, Boss1);
-                output.battleAction();
-                cin >> userActChoice;
-                userActChoice = checkUserActChoice(userActChoice);
-
-                // attack if user input 1
-                if(userActChoice == 1){
-                    cout << "Use attack" << endl;
-                    gameAction.attackFunction(userChar, Boss1, 0);
-                    characterInformation(userChar, Boss1);
-                }
-                // defense if user input 2
-                else if(userActChoice == 2){
-                    cout << "Use defense" << endl << endl;
-                }
-                // use ultimate skill if user input 4
-                else if(userActChoice == 4){
-                    // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
-                    if(ultiCounter == 0){
-                        skill.useUltimateSkill(userChar, Boss1);
-                        characterInformation(userChar, Boss1);
-                        ++ ultiCounter;
-                    }
-                    else{
-                        cout << "Ultimate Skill is unavailable now! Turn lost" << endl;
-                        characterInformation(userChar, Boss1);
-                    }
-                }
+                userAction(userChar, Boss1, defenseCounter, ultiCounter);
 
                 // check if Boss is still alive or not after user's turn
                 // if boss is dead, move to victory screen and return both characters' stat to original for future battles.
                 if(Boss1.isAlive() == false){
-                    thisScore = userChar.getHealth() * 10;
+                    int thisScore = userChar.getHealth() * 10;
                     totalScore = totalScore + thisScore;
-                    output.singlePlayerVictory(thisScore, totalScore);
-                    cin >> endGameChoice;
-                    endGameChoice = checkEndGameInput(endGameChoice);
-
-                    // update score and print leaderboard
                     userPlayer.playerScore = totalScore;
-                    leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                    leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                    leaderBoardFunction.printTopFive(leaderBoardVector);
+                    bossIsDead(userChar, Boss1, totalScore, thisScore, endGameChoice, userPlayer, leaderBoardVector);
 
-                    renewStat.returnToOriginal(userChar, Boss1);
                     break;
                 }
 
@@ -225,38 +358,13 @@ int main(){
                 // Boss's turn.
                 ++ turn;
                 cout << "Turn: " << turn << endl;
-                // Boss simply attack
-                if(Boss1.getStatus() == "Normal"){
-                    cout << "Boss level 1 attacks user" << endl;
-                    gameAction.attackFunction(Boss1, userChar, defenseCounter);
-                    characterInformation(userChar, Boss1);
-                }
-                // If Boss is under effect, it can't attack user
-                else if(endStatus > turn and (Boss1.getStatus() == "Sleeping" or Boss1.getStatus() == "Paralyzing" or Boss1.getStatus() == "Frozen")){
-                    cout << "Boss level 1 is under status aliment" << endl;
-                    characterInformation(userChar, Boss1);
-                }
-                // Boss wakes up based on calculation above and attack user
-                else if(endStatus <= turn and (Boss1.getStatus() == "Sleeping" or Boss1.getStatus() == "Paralyzing" or Boss1.getStatus() == "Frozen")){
-                    Boss1.setStatus("Normal");
-                    cout << "Boss level 1 has awaken" << endl;
-                    cout << "Boss level 1 attacks user" << endl;
-                    gameAction.attackFunction(Boss1, userChar, defenseCounter);
-                    characterInformation(userChar, Boss1);
-                }
+                bossAttack(userChar, Boss1, defenseCounter, turn, endStatus);
 
                 // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                 if(userChar.isAlive() == false){
-                    output.singlePlayerDefeat(totalScore);
-                    cin >> endGameChoice;
-                    endGameChoice = checkEndGameInput(endGameChoice);
-
                     userPlayer.playerScore = totalScore;
-                    leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                    leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                    leaderBoardFunction.printTopFive(leaderBoardVector);
+                    userIsDead(userChar, Boss1, totalScore, endGameChoice, userPlayer, leaderBoardVector);
 
-                    renewStat.returnToOriginal(userChar, Boss1);
                     break;
                 }
             }
@@ -273,51 +381,16 @@ int main(){
                     // print turn, ask for user's choice of action and check for valid input
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    characterInformation(userChar, Boss2);
-                    output.battleAction();
-                    cin >> userActChoice;
-                    userActChoice = checkUserActChoice(userActChoice);
-
-                    // attack if user input 1
-                    if(userActChoice == 1){
-                        cout << "Use attack" << endl;
-                        gameAction.attackFunction(userChar, Boss2, 0);
-                        characterInformation(userChar, Boss2);
-                    }
-                    // defense if user input 2
-                    else if(userActChoice == 2){
-                        cout << "Use defense" << endl << endl;
-                    }
-                    // use ultimate skill if user input 4
-                    else if(userActChoice == 4){
-                        // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
-                        if(ultiCounter == 0){
-                            skill.useUltimateSkill(userChar, Boss2);
-                            characterInformation(userChar, Boss2);
-                            ++ultiCounter;
-                        }
-                        else{
-                            cout << "Ultimate Skill is unavailable now! Turn lost" << endl;
-                            characterInformation(userChar, Boss2);
-                        }
-                    }
+                    userAction(userChar, Boss2, defenseCounter, ultiCounter);
 
                     // check if Boss is still alive or not after user's turn
                     // if boss is dead, move to victory screen and return both characters' stat to original for future battles.
                     if(Boss2.isAlive() == false){
-                        thisScore = userChar.getHealth() * 10;
+                        int thisScore = userChar.getHealth() * 10;
                         totalScore = totalScore + thisScore;
-                        output.singlePlayerVictory(thisScore, totalScore);
-                        cin >> endGameChoice;
-                        endGameChoice = checkEndGameInput(endGameChoice);
-
-                        // update score and print leaderboard
                         userPlayer.playerScore = totalScore;
-                        leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                        leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                        leaderBoardFunction.printTopFive(leaderBoardVector);
+                        bossIsDead(userChar, Boss2, totalScore, thisScore, endGameChoice, userPlayer, leaderBoardVector);
 
-                        renewStat.returnToOriginal(userChar, Boss2);
                         break;
                     }
                     
@@ -332,40 +405,16 @@ int main(){
                     // Boss's turn
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    // Boss simply attack
-                    if(Boss2.getStatus() == "Normal"){
-                        cout << "Boss level 2 attacks user" << endl;
-                        gameAction.attackFunction(Boss2, userChar, defenseCounter);
-                        characterInformation(userChar, Boss2);
-                    }
-                    // If Boss is under effect, it can't attack user
-                    else if(endStatus > turn and (Boss2.getStatus() == "Sleeping" or Boss2.getStatus() == "Paralyzing" or Boss2.getStatus() == "Frozen")){
-                        cout << "Boss level 2 is under status aliment" << endl;
-                        characterInformation(userChar, Boss2);
-                    }
-                    // Boss wakes up based on calculation above and attack user
-                    else if(endStatus <= turn and (Boss2.getStatus() == "Sleeping" or Boss2.getStatus() == "Paralyzing" or Boss2.getStatus() == "Frozen")){
-                        Boss2.setStatus("Normal");
-                        cout << "Boss level 2 has awaken" << endl;
-                        cout << "Boss level 2 attacks user" << endl;
-                        gameAction.attackFunction(Boss2, userChar, defenseCounter);
-                        characterInformation(userChar, Boss2);
-                    }
+                    bossAttack(userChar, Boss2, defenseCounter, turn, endStatus);
+
                     // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                     if(userChar.isAlive() == false){
-                        output.singlePlayerDefeat(totalScore);
-                        cin >> endGameChoice;
-                        endGameChoice = checkEndGameInput(endGameChoice);
-
                         userPlayer.playerScore = totalScore;
-                        leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                        leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                        leaderBoardFunction.printTopFive(leaderBoardVector);
-
-                        renewStat.returnToOriginal(userChar, Boss2);
+                        userIsDead(userChar, Boss2, totalScore, endGameChoice, userPlayer, leaderBoardVector);
                         break;
                     }
                 }
+                defenseCounter = 0;
             }
 
             if(endGameChoice == 2){
@@ -376,48 +425,19 @@ int main(){
                 while(userChar.isAlive() == true and Boss3.isAlive() == true){
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    characterInformation(userChar, Boss3);
-                    output.battleAction();
-                    cin >> userActChoice;
-                    userActChoice = checkUserActChoice(userActChoice);
-
-                    if(userActChoice == 1){
-                        cout << "Use attack" << endl;
-                        gameAction.attackFunction(userChar, Boss3, 0);
-                        characterInformation(userChar, Boss3);
-                    }
-                    else if(userActChoice == 2){
-                        cout << "Use defense" << endl << endl;
-                    }
-                    else if(userActChoice == 4){
-                        if(ultiCounter == 0){
-                            skill.useUltimateSkill(userChar, Boss3);
-                            characterInformation(userChar, Boss3);
-                            ++ultiCounter;
-                        }
-                        else{
-                            cout << "Ultimate Skill is unavailable now! Turn lost" << endl;
-                            characterInformation(userChar, Boss3);
-                        }
-                    }
+                    userAction(userChar, Boss3, defenseCounter, ultiCounter);
 
                     if(Boss3.isAlive() == false){
-                        thisScore = userChar.getHealth() * 10;
+                        int thisScore = userChar.getHealth() * 10;
                         totalScore = totalScore + thisScore;
-                        output.singlePlayerVictoryLastBattle(thisScore, totalScore);
-
-                        // update score and print leaderboard
                         userPlayer.playerScore = totalScore;
-                        leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                        leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                        leaderBoardFunction.printTopFive(leaderBoardVector);
+                        finalBossIsDead(userChar, Boss3, totalScore, thisScore, userPlayer, leaderBoardVector);
 
-                        renewStat.returnToOriginal(userChar, Boss3);
                         break;
                     }
 
                     if(Boss3.getStatus() == "Sleeping" and endStatus == 0){
-                    endStatus = turn + 5;
+                        endStatus = turn + 5;
                     }
                     if((Boss3.getStatus() == "Paralyzing" or Boss3.getStatus() == "Frozen") and endStatus == 0){
                         endStatus = turn + 3;
@@ -425,32 +445,12 @@ int main(){
 
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    if(Boss3.getStatus() == "Normal"){
-                        cout << "Boss level 3 attacks user" << endl;
-                        gameAction.attackFunction(Boss3, userChar, defenseCounter);
-                        characterInformation(userChar, Boss3);
-                    }
-                    else if(endStatus > turn and (Boss3.getStatus() == "Sleeping" or Boss3.getStatus() == "Paralyzing" or Boss3.getStatus() == "Frozen")){
-                        cout << "Boss level 3 is under status aliment" << endl;
-                        characterInformation(userChar, Boss3);
-                    }
-                    else if(endStatus <= turn and (Boss3.getStatus() == "Sleeping" or Boss3.getStatus() == "Paralyzing" or Boss3.getStatus() == "Frozen")){
-                        Boss3.setStatus("Normal");
-                        cout << "Boss level 3 has awaken" << endl;
-                        cout << "Boss level 3 attacks user" << endl;
-                        gameAction.attackFunction(Boss3, userChar, defenseCounter);
-                        characterInformation(userChar, Boss3);
-                    }
+                    bossAttack(userChar, Boss3, defenseCounter, turn, endStatus);
 
+                    // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                     if(userChar.isAlive() == false){
-                        output.singlePlayerDefeat(totalScore);
-
                         userPlayer.playerScore = totalScore;
-                        leaderBoardFunction.addToLeaderBoard(leaderBoardVector, userPlayer);
-                        leaderBoardFunction.sortLeaderBoard(leaderBoardVector);
-                        leaderBoardFunction.printTopFive(leaderBoardVector);
-
-                        renewStat.returnToOriginal(userChar, Boss3);
+                        userIsDead(userChar, Boss3, totalScore, endGameChoice, userPlayer, leaderBoardVector);
                         break;
                     }
                 }
@@ -463,27 +463,114 @@ int main(){
         else if(userInput == 2){
             int userOneChar;
             int userTwoChar;
-
+            int turn = 0;
+            int ultiCounter1 = 0;
+            int ultiCounter2 = 0;
+            int endStatus1 = 0;
+            int endStatus2 = 0;
             string userOneName;
             string userTwoName;
 
             //Ask for both users' name 
             output.multiFirstPlayerName();
             cin >> userOneName;
+            
             output.multiSecondPlayerName();
             cin >> userTwoName;
 
             //Ask for characer and check for valid input
+            output.player(userOneName);
             output.characterSelection();
             cin >> userOneChar;
             userOneChar = checkCharacterSelectionInput(userOneChar);
             Character userChar1 = selectChar(Mario, Luigi, Peach, Bowser_Jr, Kirby, Sonic, Cinderella, McQueen, Mater, SpongeBob, userOneChar);
 
             //Ask for characer and check for valid input
+            output.player(userTwoName);
             output.characterSelection();
             cin >> userTwoChar;
             userTwoChar = checkCharacterSelectionInputTwo(userTwoChar, userOneChar);
             Character userChar2 = selectChar(Mario, Luigi, Peach, Bowser_Jr, Kirby, Sonic, Cinderella, McQueen, Mater, SpongeBob, userTwoChar);
+            
+            // print turn, ask for user's choice of action and check for valid input
+            // Case 1: first player goes first
+            if (firstPlayer(userChar1, userChar2)== 1){
+                while (userChar1.isAlive() && userChar2.isAlive()){
+                    ++ turn;
+                    cout << "Turn: " << turn << endl;
+                    output.player(userOneName);
+                    userAction2(userChar1, userChar2, turn, endStatus1, ultiCounter1);
+                    
+                    
+                    if (userChar2.isAlive() == false){ 
+                        output.multiVictory(userOneName);
+                        break;
+                    }
+                
+                    if(userChar2.getStatus() == "Sleeping" && endStatus2 == 0){
+                        endStatus2 = turn + 5;
+                    }
+                    if ((userChar2.getStatus() == "Paralyzing" || userChar2.getStatus() == "Frozen") && endStatus2 == 0){
+                        endStatus2 = turn + 3;
+                    }
+
+                    ++ turn;
+                    cout << "Turn: " << turn << endl;
+                    output.player(userTwoName);
+                    userAction2(userChar2, userChar1, turn, endStatus2, ultiCounter2);
+
+                    if (userChar1.isAlive() == false){ 
+                        output.multiVictory(userTwoName);
+                        break;
+                    }
+
+                    if(userChar1.getStatus() == "Sleeping" && endStatus1 == 0){
+                        endStatus1 = turn + 5;
+                    }
+                    if ((userChar1.getStatus() == "Paralyzing" || userChar1.getStatus() == "Frozen") && endStatus1 == 0){
+                        endStatus1 = turn + 3;
+                    }   
+                }
+            }
+            //Case 2: second player goes first
+            else {  
+                while (userChar1.isAlive() && userChar2.isAlive()){
+                    ++ turn;
+                    cout << "Turn: " << turn << endl;
+                    output.player(userTwoName);
+                    userAction2(userChar2, userChar1, turn, endStatus1, ultiCounter1);
+                    
+                    
+                    if (userChar1.isAlive() == false){ 
+                        output.multiVictory(userTwoName);
+                        break;
+                    }
+                
+                    if(userChar1.getStatus() == "Sleeping" && endStatus1 == 0){
+                        endStatus1 = turn + 5;
+                    }
+                    if ((userChar1.getStatus() == "Paralyzing" || userChar1.getStatus() == "Frozen") && endStatus1 == 0){
+                        endStatus1 = turn + 3;
+                    }
+
+                    ++ turn;
+                    cout << "Turn: " << turn << endl;
+                    output.player(userOneName);
+                    userAction2(userChar1, userChar2, turn, endStatus2, ultiCounter2);
+
+                    if (userChar2.isAlive() == false){
+                        output.multiVictory(userOneName);
+                        break;
+                    }
+
+                    if(userChar2.getStatus() == "Sleeping" && endStatus2 == 0){
+                        endStatus2 = turn + 5;
+                    }
+                    if ((userChar2.getStatus() == "Paralyzing" || userChar2.getStatus() == "Frozen") && endStatus2 == 0){
+                        endStatus2 = turn + 3;
+                    }   
+                }
+            }
 
             output.mainMenu();
             cin >> userInput;
@@ -494,20 +581,8 @@ int main(){
             break;
         }
     }
-
-
     return 0; 
 }
 
-
-
-// To test the game, please
-// g++ main.cpp Character.cpp Ultimate.cpp ScreenLayout.cpp ReturnStat.cpp -o runGame
-// ./runGame
-// or 
-// cmake .
-// make
-// ./runGame
-
-// Need to implement: multiplayer mode, inventory, game engine,
-// completed implementation: return to normal class, prevent ultimate spam, valid input when user input character instead of number, leaderboard
+// Need to implement: inventory, ultimate skill output message
+//fix bugs in multiplayer modes and HP>=0

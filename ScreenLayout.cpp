@@ -81,3 +81,19 @@ void ScreenLayout::multiPlayerBattleEnd()
     cout << "[Player Name] has won the battle!" << endl;
     cout << endl << "Type 1 to continue." << endl;
 }
+
+void ScreenLayout::player(const string & input) {
+        cout << input << "\'s turn: " << endl;
+}
+
+void ScreenLayout::multiVictory(const string & playerName )
+{
+    cout << "Congrats! " << playerName << " has won the battle." << endl;
+}
+
+void ScreenLayout::MultibattleAction() {
+    cout << "Options for Action:" << endl;
+    cout << "1. Attack" << endl;
+    cout << "2. Ultimate Skill" << endl;
+    cout << endl << "Please choose a number to perform an action: ";
+}
