@@ -18,6 +18,9 @@ class ScreenLayout
         void singlePlayerVictoryLastBattle(int thisGameScore, int totalScore);
         void singlePlayerDefeat(int totalScore);
         void multiPlayerBattleEnd();
+        void player(const string & input);
+        void multiVictory(const string & );
+        void MultibattleAction();
 };
 
 #endif

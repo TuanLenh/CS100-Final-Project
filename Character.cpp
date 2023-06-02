@@ -63,4 +63,6 @@ using namespace std;
         return true;
     }
 
-    
+    int Character::getSpeed() const {
+        return speedStat;
+    } 
