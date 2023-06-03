@@ -130,6 +130,16 @@ TEST(UltimateSkillTest, checkLuigi)
     EXPECT_EQ(Kirby.getStatus(), "Sleeping");
 }
 
+TEST(UltimateSkillTest, checkLuigi2)
+{
+    Character Luigi(2, "Luigi",100, 15, 11, 60, "Normal");
+    Character SpongeBob(10 ,"SpongeBob",100, 12, 18, 20, "Normal");
+
+    UltimateSkill ulti;
+    ulti.useUltimateSkill(Luigi,SpongeBob);
+    EXPECT_EQ(SpongeBob.getStatus(), "Sleeping");
+}
+
 TEST(UltimateSkillTest, checkSpongeBob)
 {
     Character SpongeBob(10 ,"SpongeBob",100, 12, 18, 20, "Normal");
