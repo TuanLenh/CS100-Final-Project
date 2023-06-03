@@ -16,6 +16,16 @@ TEST(UltimateSkillTest, checkSonic)
     EXPECT_EQ(SpongeBob.getStatus(), "Paralyzing");
     EXPECT_EQ(SpongeBob.getDefense(), 16);
 }
+TEST(UltimateSkillTest, checkSonic2)
+{
+    Character Cinderella(7, "Cinderella",100, 10, 10, 67, "Normal");
+    Character Sonic(6, "Sonic",100, 14, 15, 100, "Normal");
+
+    UltimateSkill ulti;
+    ulti.useUltimateSkill(Sonic, Cinderella);
+    EXPECT_EQ(Cinderella.getStatus(), "Paralyzing");
+    EXPECT_EQ(Cinderella.getDefense(), 9);
+}
 
 TEST(UltimateSkillTest, checkCinderella)
 {
@@ -24,6 +34,15 @@ TEST(UltimateSkillTest, checkCinderella)
 
     UltimateSkill ulti;
     ulti.useUltimateSkill(Cinderella, Sonic);
+    EXPECT_EQ(Cinderella.getHealth(), 200);
+}
+TEST(UltimateSkillTest, checkCinderella2)
+{
+    Character Cinderella(7, "Cinderella",100, 10, 10, 67, "Normal");
+    Character McQueen(8,"Lightning McQueen",100, 18, 13, 80, "Normal");
+
+    UltimateSkill ulti;
+    ulti.useUltimateSkill(Cinderella, McQueen);
     EXPECT_EQ(Cinderella.getHealth(), 200);
 }
 
@@ -35,6 +54,16 @@ TEST(UltimateSkillTest, checkPeach)
     UltimateSkill ulti;
     ulti.useUltimateSkill(Peach, Mario);
     EXPECT_EQ(Mario.getAttack(), 16);
+} 
+
+TEST(UltimateSkillTest, checkPeach2)
+{
+    Character Bowser_Jr(4, "Bowser Jr", 100, 11, 20, 30, "Normal");
+    Character Peach(3, "Peach", 100, 16, 10, 70, "Normal");
+
+    UltimateSkill ulti;
+    ulti.useUltimateSkill(Peach, Bowser_Jr);
+    EXPECT_EQ(Bowser_Jr.getAttack(), 8);
 } 
 
 TEST(UltimateSkillTest, checkMario)
