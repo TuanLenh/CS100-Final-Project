@@ -32,6 +32,8 @@ There are various tools our group will utilize throughout the process of develop
 
 * [Google Test Framework](https://github.com/google/googletest) - The Google Test Framework is a variety of tools developed by Google in order to assist developers with creating/running a diverse volume of test cases to ensure the program works effectively, and all expected outputs are present.
 
+* [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - Gcov is a source code coverage analysis and statement-by-statement profiling tool. Gcov generates exact counts of the number of times each statement in a program is executed and annotates source code to add instrumentation.
+
 ## What will be the input/output of our project?
 
 * Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. The user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory.
@@ -114,6 +116,7 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  > Instructions on installing and running your application
+ 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   .
  
