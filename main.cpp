@@ -12,6 +12,14 @@ using namespace std;
 
 // print name, hp and status of character
 void characterInformation(Character user, Character user2){
+    if (user.getHealth() <0 ) 
+    {
+        user.setHealth(0);
+    }
+    if (user2.getHealth() <0 ) 
+    {
+        user2.setHealth(0);
+    }
     cout << user.getName() << "'s HP: " << user.getHealth() << " / Status: " << user.getStatus() << endl;
     cout << user2.getName() << "'s HP: " << user2.getHealth() << " / Status: " << user2.getStatus() << endl << endl; 
 }
