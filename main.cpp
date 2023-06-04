@@ -126,9 +126,15 @@ int checkEndGameInput(int num){
 
 void bossAttack(Character & user, Character & boss, int defenseCounter, int turn, int endStatus){
     AttackFunction gameAction;
-    // Boss simply attack
-    if(boss.getStatus() == "Normal"){
-        cout << boss.getName() << " attacks." << endl;
+    // Boss's heavy attack
+    if(boss.getStatus() == "Normal" and turn == 6){
+        cout << boss.getName() << " uses heavy attack." << endl;
+        gameAction.bossHeavyAttack(boss, user, defenseCounter);
+        characterInformation(user, boss);
+    }
+    // Boss's simple attack
+    else if(boss.getStatus() == "Normal"){
+        cout << boss.getName() << " uses simple attack." << endl;
         gameAction.attackFunction(boss, user, defenseCounter);
         characterInformation(user, boss);
     }
@@ -138,12 +144,12 @@ void bossAttack(Character & user, Character & boss, int defenseCounter, int turn
         characterInformation(user, boss);
     }
     // Boss wakes up based on calculation above and attack user
-        else if(endStatus <= turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
-        boss.setStatus("Normal");
-        cout << boss.getName() << " has awaken" << endl;
-        cout << boss.getName() << " attacks." << endl;
-        gameAction.attackFunction(boss, user, defenseCounter);
-        characterInformation(user, boss);
+    else if(endStatus <= turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
+    boss.setStatus("Normal");
+    cout << boss.getName() << " has awaken" << endl;
+    cout << boss.getName() << " attacks." << endl;
+    gameAction.attackFunction(boss, user, defenseCounter);
+    characterInformation(user, boss);
     }
 }
 
@@ -369,6 +375,7 @@ int main(){
                 ++ turn;
                 cout << "Turn: " << turn << endl;
                 bossAttack(userChar, Boss1, defenseCounter, turn, endStatus);
+                defenseCounter = 0;
 
                 // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                 if(userChar.isAlive() == false){
@@ -379,7 +386,7 @@ int main(){
                 }
             }
             
-            // endGameChoice should either be 1 or 2 at this point
+            // endGameChoice must either be 1 or 2 at this point
             if(endGameChoice == 2){
                 // reset ultiCounter and status timer for new battle
                 ultiCounter = 0;
@@ -416,6 +423,7 @@ int main(){
                     ++ turn;
                     cout << "Turn: " << turn << endl;
                     bossAttack(userChar, Boss2, defenseCounter, turn, endStatus);
+                    defenseCounter = 0;
 
                     // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                     if(userChar.isAlive() == false){
@@ -424,7 +432,6 @@ int main(){
                         break;
                     }
                 }
-                defenseCounter = 0;
             }
 
             if(endGameChoice == 2){
@@ -456,6 +463,7 @@ int main(){
                     ++ turn;
                     cout << "Turn: " << turn << endl;
                     bossAttack(userChar, Boss3, defenseCounter, turn, endStatus);
+                    defenseCounter = 0;
 
                     // If user is dead, then show defeat screen and return both characters' stat to original for future battle.
                     if(userChar.isAlive() == false){
