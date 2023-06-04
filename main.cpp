@@ -166,6 +166,7 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
         // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
         if(ultiCounter == 0){
             skill.useUltimateSkill(user, boss);
+            output.UltimateSkillsOutputSingle(user);
             characterInformation(user, boss);
             ++ ultiCounter;
         }
@@ -199,6 +200,7 @@ void userAction2(Character & user1, Character & user2, int turn, int endStatus, 
             // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
             if(ultiCounter == 0){
                 skill.useUltimateSkill(user1, user2);
+                output.UltimateSkillsOutputMulti(user1, user2);
                 characterInformation(user1, user2);
                 ++ ultiCounter;
             }
