@@ -115,7 +115,10 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
-
+The steps for installation is as follows
+1. Git installation: If Git is not insatlled on your computer, you will need to install and download it in order to access our repository.
+2. Acesss rrepository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
+3. Git clone: 
  
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   .
