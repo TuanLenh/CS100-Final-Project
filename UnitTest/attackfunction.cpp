@@ -19,5 +19,5 @@ TEST(AttackFunctionTest, NotZeroCoubter) {
     
     AttackFunction attackOppnent;
     attackOppnent.attackFunction(char1, char2, 1);
-    EXPECT_EQ(char2.getHealth(), 75);
+    EXPECT_EQ(char2.getHealth(), 82);
 }

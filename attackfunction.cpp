@@ -10,7 +10,18 @@ void AttackFunction::attackFunction(Character& char1, Character& char2, int coun
         char2.setHealth(char2.getHealth() - damage);
     }
     else{
-        int damage = char1.getAttack() * (100.0 / (100.0 + (char2.getDefense()) * 2));
+        int damage = char1.getAttack() * (100.0 / (100.0 + (char2.getDefense()) * 4));
+        char2.setHealth(char2.getHealth() - damage);
+    }
+}
+
+void AttackFunction::bossHeavyAttack(Character& char1, Character& char2, int counter){
+    if(counter == 0){
+        int damage = (char1.getAttack() * 2) * (100.0 / (100.0 + char2.getDefense()));
+        char2.setHealth(char2.getHealth() - damage);
+    }
+    else{
+        int damage = (char1.getAttack() * 2) * (100.0 / (100.0 + (char2.getDefense()) * 4));
         char2.setHealth(char2.getHealth() - damage);
     }
 }
