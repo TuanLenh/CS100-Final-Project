@@ -25,40 +25,52 @@ void characterInformation(Character user, Character user2){
 }
 
 // return character based on user's input
-Character selectChar(Character c1, Character c2, Character c3, Character c4, Character c5, Character c6, Character c7, Character c8, Character c9, Character c10, int num){
-    if(num == c1.getID()){
+Character selectChar(Character c1, Character c2, Character c3, Character c4, Character c5, Character c6, Character c7, Character c8, Character c9, Character c10, int num)
+{
+    if(num == c1.getID())
+    {
         return c1;
     }
-    else if(num == c2.getID()){
+    else if(num == c2.getID())
+    {
         return c2;
     }
-    else if(num == c3.getID()){
+    else if(num == c3.getID())
+    {
         return c3;
     }
-    else if(num == c4.getID()){
+    else if(num == c4.getID())
+    {
         return c4;
     }
-    else if(num == c5.getID()){
+    else if(num == c5.getID())
+    {
         return c5;
     }
-    else if(num == c6.getID()){
+    else if(num == c6.getID())
+    {
         return c6;
     }
-    else if(num == c7.getID()){
+    else if(num == c7.getID())
+    {
         return c7;
     }
-    else if(num == c8.getID()){
+    else if(num == c8.getID())
+    {
         return c8;
     }
-    else if(num == c9.getID()){
+    else if(num == c9.getID())
+    {
         return c9;
     }
     return c10;
 }
 
 // check for valid main menu input
-int checkMainMenuInput(int num){
-    while((num != 1 and num != 2 and num != 3) or (cin.fail())){
+int checkMainMenuInput(int num)
+{
+    while((num != 1 and num != 2 and num != 3) or (cin.fail()))
+    {
         cout << "Please enter again: ";
         cin.clear();
         cin.ignore(256,'\n');
@@ -68,7 +80,8 @@ int checkMainMenuInput(int num){
 }
 
 // check for valid character selection input
-int checkCharacterSelectionInput(int num){
+int checkCharacterSelectionInput(int num)
+{
     while((num != 1 and num != 2 and num != 3 and num != 4 and num != 5 and num != 6
         and num != 7 and num != 8 and num != 9 and num != 10) or cin.fail()){
             cout << "Please enter again: ";
@@ -80,7 +93,8 @@ int checkCharacterSelectionInput(int num){
 }
 
 // check for valid second character selection input
-int checkCharacterSelectionInputTwo(int num, int firstNum){
+int checkCharacterSelectionInputTwo(int num, int firstNum)
+{
     while((num != 1 and num != 2 and num != 3 and num != 4 and num != 5 and num != 6
         and num != 7 and num != 8 and num != 9 and num != 10) or num == firstNum or cin.fail()){
             cout << "Please enter again: ";
@@ -92,8 +106,10 @@ int checkCharacterSelectionInputTwo(int num, int firstNum){
 }
 
 // check for valid input during battle
-int checkUserActChoice(int num){
-    while((num != 1 and num != 2 and num != 3 and num != 4) or (cin.fail())){
+int checkUserActChoice(int num)
+{
+    while((num != 1 and num != 2 and num != 3 and num != 4) or (cin.fail()))
+    {
         cout << "Please enter again: ";
         cin.clear();
         cin.ignore(256,'\n');
@@ -103,8 +119,10 @@ int checkUserActChoice(int num){
 }
 
 // check for valid input during battle in Multiplayers mode
-int checkUserActChoice2(int num){
-    while((num != 1 and num != 2) or (cin.fail())){
+int checkUserActChoice2(int num)
+{
+    while((num != 1 and num != 2) or (cin.fail()))
+    {
         cout << "Please enter again: ";
         cin.clear();
         cin.ignore(256,'\n');
@@ -115,7 +133,8 @@ int checkUserActChoice2(int num){
 
 // check for valid end game input
 int checkEndGameInput(int num){
-    while((num != 1 and num != 2) or cin.fail()){
+    while((num != 1 and num != 2) or cin.fail())
+    {
         cout << "Please enter again: ";
         cin.clear();
         cin.ignore(256,'\n');
@@ -124,27 +143,33 @@ int checkEndGameInput(int num){
     return num;
 }
 
-void bossAttack(Character & user, Character & boss, int defenseCounter, int turn, int endStatus){
+void bossAttack(Character & user, Character & boss, int defenseCounter, int turn, int endStatus)
+{
     AttackFunction gameAction;
-    // Boss's heavy attack
-    if(boss.getStatus() == "Normal" and turn == 6){
+    // Boss's heavy attack on the 6th turn
+    if(boss.getStatus() == "Normal" and turn == 6)
+    {
         cout << boss.getName() << " uses heavy attack." << endl;
         gameAction.bossHeavyAttack(boss, user, defenseCounter);
         characterInformation(user, boss);
     }
     // Boss's simple attack
-    else if(boss.getStatus() == "Normal"){
+    else if(boss.getStatus() == "Normal")
+    {
         cout << boss.getName() << " uses simple attack." << endl;
         gameAction.attackFunction(boss, user, defenseCounter);
         characterInformation(user, boss);
     }
     // If Boss is under effect, it can't attack user
-    else if(endStatus > turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
+    else if(endStatus > turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen"))
+    {
+
         cout << boss.getName() << " is under status aliment" << endl;
         characterInformation(user, boss);
     }
     // Boss wakes up based on calculation above and attack user
-    else if(endStatus <= turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen")){
+    else if(endStatus <= turn and (boss.getStatus() == "Sleeping" or boss.getStatus() == "Paralyzing" or boss.getStatus() == "Frozen"))
+    {
     boss.setStatus("Normal");
     cout << boss.getName() << " has awaken" << endl;
     cout << boss.getName() << " attacks." << endl;
@@ -153,7 +178,8 @@ void bossAttack(Character & user, Character & boss, int defenseCounter, int turn
     }
 }
 
-void userAction(Character & user, Character & boss, int & defenseCounter, int & ultiCounter){
+void userAction(Character & user, Character & boss, int & defenseCounter, int & ultiCounter)
+{
     ScreenLayout output;
     AttackFunction gameAction;
     UltimateSkill skill;
@@ -176,9 +202,11 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
         defenseCounter = 1;
     }
     // use ultimate skill if user input 4
-    else if(userActChoice == 4){
+    else if(userActChoice == 4)
+    {
         // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
-        if(ultiCounter == 0){
+        if(ultiCounter == 0)
+        {
             skill.useUltimateSkill(user, boss);
             output.UltimateSkillsOutputSingle(user);
             characterInformation(user, boss);
@@ -191,28 +219,33 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
     }
 }
 
-void userAction2(Character & user1, Character & user2, int turn, int endStatus, int & ultiCounter){
+void userAction2(Character & user1, Character & user2, int turn, int endStatus, int & ultiCounter)
+{
     ScreenLayout output;
     UltimateSkill skill;
     AttackFunction gameAction;
     int userActChoice;
 
-    if(user1.getStatus() == "Normal"){
+    if(user1.getStatus() == "Normal")
+    {
         characterInformation(user1, user2);
         output.MultibattleAction();
         cin >> userActChoice;
         userActChoice = checkUserActChoice2(userActChoice);
 
         // attack if user input 1
-        if(userActChoice == 1){
+        if(userActChoice == 1)
+        {
             cout << "Use attack" << endl;
             gameAction.attackFunction(user1, user2, 0);
             characterInformation(user1, user2);
         }
         // use ultimate skill if user input 2
-        else if(userActChoice == 2){
+        else if(userActChoice == 2)
+        {
             // user can only use ultimate skill once per battle. If they try to use it again, they lost their turn
-            if(ultiCounter == 0){
+            if(ultiCounter == 0)
+            {
                 skill.useUltimateSkill(user1, user2);
                 output.UltimateSkillsOutputMulti(user1, user2);
                 characterInformation(user1, user2);
