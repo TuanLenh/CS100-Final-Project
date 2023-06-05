@@ -117,8 +117,10 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  ## Installation/Usage
 The steps for installation is as follows
 1. Git installation: If Git is not insatlled on your computer, you will need to install and download it in order to access our repository.
-2. Acesss rrepository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
-3. Git clone: 
+2. Acesss repository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
+3. Git clone: Use the git clone command followed by the URL of our repository (which can be found in the upper right hand corner on our repository page. This will in turn create 
+a new directory with our repository name. After this to run our game enter the cmake and make commands
+4. Git Pull: If there are any updates in our repository and you want to implement these newest changes simply git pull command which will sucessfully fetch any new updates there are to the game.
  
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   .
