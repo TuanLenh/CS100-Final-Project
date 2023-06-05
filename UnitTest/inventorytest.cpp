@@ -1,23 +1,22 @@
 #include <gtest/gtest.h>
 #include "Character.h"
 #include "inventory.h"
+//test 1
+TEST(CharacterTest, UseHealthPotion) {
+    Character char1;
+    char1.setHealth(100);
 
-// Test 1
-TEST(InventoryTest, IncreaseUserAttack_Mario) {
-    Character char1("Mario", 100, 50);
-    Character char2("Bowser", 200, 75);
-    Inventory inventory;
-    inventory.useInventory(char1, char2);
+    useHealthPotion(char1);
 
-    EXPECT_EQ(120, char1.getAttack());
+    EXPECT_EQ(char1.getHealth(), 150);
 }
 
-//Test 2
-TEST(InventoryTest, DecreaseOpponentDefense_Kirby) {
-    Character char1("Kirby", 150, 60);
-    Character char2("Bowser", 200, 75);
-    Inventory inventory;
-    inventory.useInventory(char1, char2);
+//test 2
+TEST(CharacterTest, UseAttackPotion) {
+    Character char1;
+    char1.setAttack(10);
 
-    EXPECT_EQ(54, char2.getDefense());
+    useAttackPotion(char1);
+
+    EXPECT_EQ(char1.getAttack(), 13);
 }
