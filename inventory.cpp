@@ -13,5 +13,5 @@ void useAttackPotion(Character &char1){
 }
 
 void useDefensePotion(Character &char1){
-    char1.setDefense(char1.getDefense() + char1.getDefense() * 0.3)
+    char1.setDefense(char1.getDefense() + char1.getDefense() * 0.3);
 }    

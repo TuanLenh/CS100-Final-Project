@@ -42,3 +42,12 @@ TEST(CharacterTests, UseAttackPotionby30) {
 }
 
 //test 5
+TEST(CharacterTests, UseDefensePotionby30){
+    Character char 1;
+    double firstDefense = char1.getDefense();
+    useDefensePotion(char1);
+    double updatedDefense = char1.getDefense();
+
+    double expectedDefense = firstDefense + firstDefense * 0.3;
+    EXPECT_DOUBLE_EQ(updatedDefense, expectedDefense);
+}
