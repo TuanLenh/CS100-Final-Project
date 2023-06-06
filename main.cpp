@@ -7,6 +7,7 @@
 #include "ReturnStat.h"
 #include "Leaderboard.h"
 #include "attackfunction.h"
+#include "inventory.h"
 
 using namespace std;
 
@@ -178,12 +179,13 @@ void bossAttack(Character & user, Character & boss, int defenseCounter, int turn
     }
 }
 
-void userAction(Character & user, Character & boss, int & defenseCounter, int & ultiCounter)
+void userAction(Character & user, Character & boss, int & defenseCounter, int & ultiCounter, int & potionCounter)
 {
     ScreenLayout output;
     AttackFunction gameAction;
     UltimateSkill skill;
     int userActChoice;
+    Inventory potionType;
 
     characterInformation(user, boss);
     output.battleAction();
@@ -192,14 +194,39 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
 
     // attack if user input 1
     if(userActChoice == 1){
-        cout << "Use attack" << endl;
+        cout << "Uses attack" << endl;
         gameAction.attackFunction(user, boss, 0);
         characterInformation(user, boss);
     }
     // defense if user input 2
     else if(userActChoice == 2){
-        cout << "Use defense" << endl << endl;
+        cout << "Uses defense" << endl << endl;
         defenseCounter = 1;
+    }
+    else if(userActChoice == 3){
+        if(potionCounter == 0){
+            cout << "No more potion to use! Turn lost!" << endl;
+        }
+        else{
+            int potionChoice = 0;
+            output.inventoryMenu();
+            cin >> potionChoice;
+            potionChoice = checkMainMenuInput(potionChoice);
+            
+            --potionCounter;
+            if(potionChoice == 1){
+                cout << "Uses health potion. " << potionCounter << " potion remaining!" << endl;
+                potionType.useHealthPotion(user);
+            }
+            else if(potionChoice == 2){
+                cout << "Uses attack potion. " << potionCounter << " potion remaining!" << endl;
+                potionType.useAttackPotion(user);
+            }
+            else{
+                cout << "Uses defense potion. " << potionCounter << " potion remaining!" << endl;
+                potionType.useDefensePotion(user);
+            }
+        }
     }
     // use ultimate skill if user input 4
     else if(userActChoice == 4)
@@ -237,7 +264,7 @@ void userAction2(Character & user1, Character & user2, int turn, int endStatus, 
         // attack if user input 1
         if(userActChoice == 1)
         {
-            cout << "Use attack" << endl;
+            cout << "Uses attack" << endl;
             gameAction.attackFunction(user1, user2, 0);
             characterInformation(user1, user2);
         }
@@ -372,6 +399,7 @@ int main(){
 
             int totalScore = 0;
 
+            int potionCounter = 3;
             int ultiCounter = 0;
             int defenseCounter = 0;
 
@@ -393,7 +421,7 @@ int main(){
                 // print turn, ask for user's choice of action and check for valid input
                 ++ turn;
                 cout << "Turn: " << turn << endl;
-                userAction(userChar, Boss1, defenseCounter, ultiCounter);
+                userAction(userChar, Boss1, defenseCounter, ultiCounter, potionCounter);
 
                 // check if Boss is still alive or not after user's turn
                 // if boss is dead, move to victory screen and return both characters' stat to original for future battles.
@@ -437,6 +465,7 @@ int main(){
             if(endGameChoice == 2)
             {
                 // reset ultiCounter and status timer for new battle
+                potionCounter = 3;
                 ultiCounter = 0;
                 endStatus = 0;
 
@@ -447,7 +476,7 @@ int main(){
                     // print turn, ask for user's choice of action and check for valid input
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    userAction(userChar, Boss2, defenseCounter, ultiCounter);
+                    userAction(userChar, Boss2, defenseCounter, ultiCounter, potionCounter);
 
                     // check if Boss is still alive or not after user's turn
                     // if boss is dead, move to victory screen and return both characters' stat to original for future battles.
@@ -490,15 +519,17 @@ int main(){
             //Player chooses to continue the battle
             if(endGameChoice == 2)
             {
+                potionCounter = 3;
                 ultiCounter = 0;
                 endStatus = 0;
+
                 cout << endl << "continue battling" << endl;
                 turn = 0;
                 while(userChar.isAlive() == true and Boss3.isAlive() == true)
                 {
                     ++ turn;
                     cout << "Turn: " << turn << endl;
-                    userAction(userChar, Boss3, defenseCounter, ultiCounter);
+                    userAction(userChar, Boss3, defenseCounter, ultiCounter, potionCounter);
 
                     if(Boss3.isAlive() == false){
                         int thisScore = userChar.getHealth() * 10;
