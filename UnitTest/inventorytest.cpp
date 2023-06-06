@@ -22,14 +22,23 @@ TEST(CharacterTest, UseAttackPotion) {
 }
 //test 3
 TEST(CharacterTests, HealthPotionby50) {
-    // Arrange
     Character char1;
     int initialHealth = char1.getHealth();
 
-    // Act
     useHealthPotion(char1);
     int updatedHealth = char1.getHealth();
-
-    // Assert
     EXPECT_EQ(updatedHealth, initialHealth + 50);
 }
+//test 4
+
+TEST(CharacterTests, UseAttackPotionby30) {
+    Character char1;
+    double initialAttack = char1.getAttack();
+    useAttackPotion(char1);
+    double updatedAttack = char1.getAttack();
+
+    double expectedAttack = initialAttack + initialAttack * 0.3;
+    EXPECT_DOUBLE_EQ(updatedAttack, expectedAttack);
+}
+
+//test 5
