@@ -20,3 +20,16 @@ TEST(CharacterTest, UseAttackPotion) {
 
     EXPECT_EQ(char1.getAttack(), 13);
 }
+//test 3
+TEST(CharacterTests, HealthPotionby50) {
+    // Arrange
+    Character char1;
+    int initialHealth = char1.getHealth();
+
+    // Act
+    useHealthPotion(char1);
+    int updatedHealth = char1.getHealth();
+
+    // Assert
+    EXPECT_EQ(updatedHealth, initialHealth + 50);
+}
