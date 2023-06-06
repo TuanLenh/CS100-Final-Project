@@ -125,4 +125,6 @@ The steps for installation is as follows
  
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   
- * We created various test cases for each feature. 
+ * We use GoogleTest to debug/troubleshoot each of our implemented features. We chose it due to its autonomy and reliabity. GoogleTest is able to run each test case on different objects. In the case of a test failure, it has ability to execute the test indepentdently, which enables quick debugging.
+ * We created various test cases for each implemented feature.
+ * In Character unit test, we created 12 different test cases to verify the functions get called approriately.
