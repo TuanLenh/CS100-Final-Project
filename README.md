@@ -36,7 +36,7 @@ There are various tools our group will utilize throughout the process of develop
 
 ## What will be the input/output of our project?
 
-* Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. The user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory.
+* Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. In single mode, the user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory. In multiplayer mode, each user needs to enter 1 or 2 to pick their action moves. There are 2 moves that users can choose from: an attack skill and an ultimate skill that acquired by chosen characters.
 
 * Output - All attack skills will inflict damage on opponents, while defense skills will reduce damage inflicted by the opponent. Ultimate skills and inventory items can consist of stronger attack skills, stronger defense skills, or a self-buff. All of these moves will result in a health percentage as an output, and, of course, the resulting output can vary widely depending on the combination of attacks, defenses, and powers used; specifically, each move will affect the health of the character in a different manner. Once the health of a character reaches zero, the game will end, displaying the winner of the game.
 
@@ -44,7 +44,7 @@ There are various tools our group will utilize throughout the process of develop
 
 There are a variety of features present in this program:
 
-* The user will have the ability to input a username of their choice. (This will mainly be used for leaderboard purposes.)
+* The user will have the ability to input an username of their choice. (This will mainly be used for leaderboard purposes.)
 * The user has up to 10 characters to choose from, with different statistics/skill sets.
 * There will be 4 moves in the single-player mode to choose from: attack, defend, ultimate skill, and inventory item.
 * There will be 2 moves in the multiplayer mode to choose from: attack and ultimate skill.
