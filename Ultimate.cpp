@@ -61,7 +61,7 @@ using namespace std;
 
         else if(char1.getName() == "Cinderella"){
             // recover user's health point and even increase health capacity
-            int newHealth = 200;
+            int newHealth = 150;
             char1.setHealth(newHealth);
         }
     }

@@ -8,7 +8,7 @@
 
 ## General Description
 
-The Super Smash Bros. text-based RPG is a terminal-based role-playing game in which the user is able to select betweeen ten different Nintendo-themed characters at the start of the game. The user will be able to choose a single-player mode, where the user will battle an AI character, or a multiplayer mode, where two users can battle each other locally. Each character features unique attacks, various defense tactics, and distinctive health statistics, and every attack/defense move will affect the health of the each character in a different manner. The game comes to an end when a character's health reaches "zero", at which point the remaining character is declared a winner.
+The Super Smash Bros. text-based RPG is a terminal-based role-playing game in which the user is able to select betweeen ten different Nintendo-themed characters at the start of the game. The user will be able to choose a single-player mode, where the user will battle an AI character, or a multiplayer mode, where two users can battle each other locally. Each character features unique attacks, various defense tactics, and distinctive health statistics, and every attack/defense move will affect the health of the each character in a different manner. This game employs a combination of basic attacks/defense, special item, and ultimate skills usage(such as boosting/reducing attack/defense statistics, hypnotizing, paralyzing, freezing ) that can deal more damage or have specific properties. The game comes to an end when a character's health reaches "zero", at which point the remaining character is declared a winner.
 
 ## Why is this project important or interesting to us?
 
@@ -36,7 +36,7 @@ There are various tools our group will utilize throughout the process of develop
 
 ## What will be the input/output of our project?
 
-* Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. The user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory.
+* Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. In single mode, the user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory. In multiplayer mode, each user needs to enter 1 or 2 to pick their action moves. There are 2 moves that users can choose from: an attack skill and an ultimate skill that acquired by chosen characters.
 
 * Output - All attack skills will inflict damage on opponents, while defense skills will reduce damage inflicted by the opponent. Ultimate skills and inventory items can consist of stronger attack skills, stronger defense skills, or a self-buff. All of these moves will result in a health percentage as an output, and, of course, the resulting output can vary widely depending on the combination of attacks, defenses, and powers used; specifically, each move will affect the health of the character in a different manner. Once the health of a character reaches zero, the game will end, displaying the winner of the game.
 
@@ -44,14 +44,16 @@ There are various tools our group will utilize throughout the process of develop
 
 There are a variety of features present in this program:
 
-* The user will have the ability to input a username of their choice. (This will mainly be used for leaderboard purposes.)
+* The user will have the ability to input an username of their choice. (This will mainly be used for leaderboard purposes.)
 * The user has up to 10 characters to choose from, with different statistics/skill sets.
-* There will be 4 moves to choose from: attack, defend, ultimate skill, and inventory item.
+* There will be 4 moves in the single-player mode to choose from: attack, defend, ultimate skill, and inventory item.
+* There will be 2 moves in the multiplayer mode to choose from: attack and ultimate skill.
 * The user will be able to choose from two game modes: single-player mode, where the user can battle AI bosses with a choice of character, and multiplayer mode, where two users can battle each other for a chance at victory. 
 * In single-player mode, each user will receive a score for each run of the game based on the number of bosses defeated, and a leaderboard will display the top five users with the highest scores.
-* In multiplayer mode, the winner will be determined by whichever character reaches zero HP (health points) last.
-* There will be a game score display option. Users can see top 5 highest scores for each mode.
+* In multiplayer mode, the loser will be determined by whichever character reaches zero HP (health points) first.
+* There will be a game score display option. Users can see top 20 highest scores for single-player mode.
 * There will be quit and restart options during the match.
+* In multiplayer mode, first turn will be determined by the character's speed, whoever has higher speed would make the first move.
 
 ## Navigation Diagram
 
@@ -69,7 +71,7 @@ Click [here](https://docs.google.com/document/d/1qu0Qhb_C_aOsg948D_91QyLSxDGLezo
 
 The user is greeted with the main menu when the game starts, and the user has three options to choose from. The user can enter "1" for single player mode, "2" for multi player mode, and "3" for quitting the program. In single player mode, the user can enter their name, followed by the ability to pick a number from 1-10 to choose a character in the Character Choosing Screen. After choosing the character, the user is moved to the Battle Screen, where they can enter a number from 1-4 to control the character. "1" represents the ability to attack, "2" represents the ability to block, "3" represents the ability to use an inventory item, and "4" represents the ability to use an ultimate attack. In the Victory Screen, the user can view their score from the previous battle, as well as their total cumulative score. The user can then enter "C" to move to the Leaderboard Screen, where the user can enter "1" or "2" to continue battling or quit the game, respectively. In case the user loses the game, they are moved to a Defeat Screen, as well as a Leaderboard Screen for Losers where they can only enter "C" to return to the Main Menu.
 
-In multi player mode, both users can enter their name, as well as pick characters through the Multiplayer Menu Screen, First player Name Screen, Second Player Name Screen, First Character Choosing Screen, and the Second Character Choosing Screen. Then, both users are prompted to the Battle Screen, where they can enter a number from 1-4 to perfrom the respective actions detailed above. The game ends when a character's health points reduces to zero, and the Battle End Screen announces the winner. The users are asked to enter "C" to return to Main Menu.
+In multi player mode, both users can enter their name, as well as pick characters through the Multiplayer Menu Screen, First player Name Screen, Second Player Name Screen, First Character Choosing Screen, and the Second Character Choosing Screen. Then, both users are prompted to the Battle Screen, where they can enter a number from 1-2 to perfrom the respective actions detailed above. The game ends when a character's health points reduces to zero, and the Battle End Screen announces the winner. The users are asked to enter "C" to return to Main Menu.
 
 ## Class Diagram
 
@@ -115,8 +117,14 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+The steps for installation is as follows
+1. Git installation: If Git is not insatlled on your computer, you will need to install and download it in order to access our repository. You can download it from https://git-scm.com/downloads .
+2. Acesss repository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
+3. Git clone: Use the git clone command followed by the URL of our repository (which can be found in the upper right hand corner on our repository page). This will in turn create a new directory with our repository name. After this to run our game enter the cmake and make commands in the terminal. 
+4. Git Pull: If there are any updates in our repository and you want to implement these newest changes, simply git pull command which will sucessfully fetch any new updates there are to the game.
  
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   .
- 
+ > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   
+ * We use GoogleTest to debug/troubleshoot each of our implemented features. We chose it due to its autonomy and reliabity. GoogleTest is able to run each test case on different objects. In the case of a test failure, it has ability to execute the test indepentdently, which enables quick debugging.
+ * We created various test cases for each implemented feature(test suite).
+ * In Character unit test, we created 12 different test cases to verify Character functions get called approriately. 

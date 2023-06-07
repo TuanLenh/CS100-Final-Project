@@ -8,4 +8,7 @@ testCharacterClass
 testAttackFunctionClass
 testUltimateClass
 testLeaderboardClass
+testInventoryClass
 runGame
+
+
