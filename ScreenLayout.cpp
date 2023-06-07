@@ -159,30 +159,3 @@ void ScreenLayout::UltimateSkillMessage(const Character & char1, const Character
 
     cout << endl << endl;
 }
-
-void ScreenLayout::HealthPotionMsg(const Character & char1)
-{
-    cout << char1.getName() << "\'s current health increases by 50hp.";
-    cout << endl << endl;
-
-}
-
-void ScreenLayout::AttackPotionMsg(const Character & char1)
-{
-    cout << char1.getName() << "\'s attack power increases by 30%.";
-    cout << endl << endl;
-
-}
-
-void ScreenLayout::DefensePotionMsg(const Character & char1)
-{
-    cout << char1.getName() << "\'s defense increases by 30%.";
-    cout << endl << endl;
-
-}
-
-void ScreenLayout::LightAttackMsg() const
-{
-    cout << "Followed by a light attack" << endl << endl;
-
-}

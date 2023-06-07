@@ -25,11 +25,6 @@ class ScreenLayout
         void UltimateSkillsOutputSingle(Character & user);
         void UltimateSkillsOutputMulti(Character & user1, Character & user2);
         void UltimateSkillMessage(const Character & , const Character & );
-        void HealthPotionMsg(const Character &);
-        void AttackPotionMsg(const Character &);
-        void DefensePotionMsg(const Character &);
-        void LightAttackMsg() const;
-
 };
 
 #endif
