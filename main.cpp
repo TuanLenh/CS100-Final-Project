@@ -217,15 +217,26 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
             if(potionChoice == 1){
                 cout << "Uses health potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useHealthPotion(user);
+                output.HealthPotionMsg(user);
+                output.LightAttackMsg() ;
+                gameAction.lightAttack(user, boss,0);
             }
             else if(potionChoice == 2){
                 cout << "Uses attack potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useAttackPotion(user);
+                output.AttackPotionMsg(user);
+                output.LightAttackMsg() ;
+                gameAction.lightAttack(user, boss,1);
+
             }
             else{
                 cout << "Uses defense potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useDefensePotion(user);
+                output.DefensePotionMsg(user);
+                output.LightAttackMsg() ;
+                gameAction.lightAttack(user, boss,2);
             }
+            characterInformation(user, boss);
         }
     }
     // use ultimate skill if user input 4
