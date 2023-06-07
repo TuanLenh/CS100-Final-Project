@@ -9,8 +9,6 @@ class AttackFunction{
     public:
         void attackFunction(Character& char1, Character& char2, int counter);
         void bossHeavyAttack(Character& char1, Character& char2, int counter);
-        void lightAttack(Character& char1, Character& char2, int counter);
-
 };
 
 #endif
