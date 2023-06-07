@@ -28,6 +28,8 @@ class ScreenLayout
         void HealthPotionMsg(const Character &);
         void AttackPotionMsg(const Character &);
         void DefensePotionMsg(const Character &);
+        void LightAttackMsg() const;
+
 };
 
 #endif

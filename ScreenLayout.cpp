@@ -180,3 +180,9 @@ void ScreenLayout::DefensePotionMsg(const Character & char1)
     cout << endl << endl;
 
 }
+
+void ScreenLayout::LightAttackMsg() const
+{
+    cout << "Followed by a light attack" << endl << endl;
+
+}
