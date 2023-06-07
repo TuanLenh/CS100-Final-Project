@@ -217,14 +217,17 @@ void userAction(Character & user, Character & boss, int & defenseCounter, int & 
             if(potionChoice == 1){
                 cout << "Uses health potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useHealthPotion(user);
+                output.HealthPotionMsg(user);
             }
             else if(potionChoice == 2){
                 cout << "Uses attack potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useAttackPotion(user);
+                output.AttackPotionMsg(user);
             }
             else{
                 cout << "Uses defense potion. " << potionCounter << " potion remaining!" << endl;
                 potionType.useDefensePotion(user);
+                output.DefensePotionMsg(user);
             }
         }
     }
