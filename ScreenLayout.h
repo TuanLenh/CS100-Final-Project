@@ -21,6 +21,7 @@ class ScreenLayout
         void player(const string & input);
         void multiVictory(const string & );
         void MultibattleAction();
+        void inventoryMenu();
         void UltimateSkillsOutputSingle(Character & user);
         void UltimateSkillsOutputMulti(Character & user1, Character & user2);
         void UltimateSkillMessage(const Character & , const Character & );

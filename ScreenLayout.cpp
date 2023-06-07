@@ -94,6 +94,15 @@ void ScreenLayout::MultibattleAction() {
     cout << endl << "Please choose a number to perform an action: ";
 }
 
+void ScreenLayout::inventoryMenu(){
+    cout << "Inventory option:" << endl;
+    cout << "1. Health potion" << endl;
+    cout << "2. Attack potion" << endl;
+    cout << "3. Defense potion" << endl;
+    cout << endl << "Please choose a potion: ";
+}
+
+
 void ScreenLayout::UltimateSkillsOutputSingle(Character & user)
 {
     cout << user.getName() << " has just used the ultimate skill against the boss! " << user.getName() << " won't be able to use the ultimate skill again for the rest of the battle." << endl;

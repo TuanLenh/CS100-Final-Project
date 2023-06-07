@@ -30,6 +30,13 @@ ADD_EXECUTABLE(testUltimateClass
     Character.cpp 
 )
 
+ADD_EXECUTABLE(testInventoryClass
+    UnitTest/inventorytest.cpp
+    inventory.cpp
+    Character.cpp 
+)
+
+
 ADD_EXECUTABLE(runGame
     main.cpp
     Character.cpp
@@ -38,6 +45,7 @@ ADD_EXECUTABLE(runGame
     Ultimate.cpp
     Leaderboard.cpp
     attackfunction.cpp
+    inventory.cpp
 )
 
 TARGET_LINK_LIBRARIES(testReturnStatClass gtest gtest_main)
@@ -54,3 +62,6 @@ TARGET_COMPILE_DEFINITIONS(testAttackFunctionClass PRIVATE gtest_disable_pthread
 
 TARGET_LINK_LIBRARIES(testUltimateClass gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testUltimateClass PRIVATE gtest_disable_pthreads=ON)
+
+TARGET_LINK_LIBRARIES(testInventoryClass gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testInventoryClass PRIVATE gtest_disable_pthreads=ON)
