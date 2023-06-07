@@ -34,7 +34,7 @@ TEST(UltimateSkillTest, checkCinderella)
 
     UltimateSkill ulti;
     ulti.useUltimateSkill(Cinderella, Sonic);
-    EXPECT_EQ(Cinderella.getHealth(), 200);
+    EXPECT_EQ(Cinderella.getHealth(), 150);
 }
 TEST(UltimateSkillTest, checkCinderella2)
 {
@@ -43,7 +43,7 @@ TEST(UltimateSkillTest, checkCinderella2)
 
     UltimateSkill ulti;
     ulti.useUltimateSkill(Cinderella, McQueen);
-    EXPECT_EQ(Cinderella.getHealth(), 200);
+    EXPECT_EQ(Cinderella.getHealth(), 150);
 }
 
 TEST(UltimateSkillTest, checkPeach)

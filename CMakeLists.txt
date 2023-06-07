@@ -31,11 +31,10 @@ ADD_EXECUTABLE(testUltimateClass
 )
 
 ADD_EXECUTABLE(testInventoryClass
-    UnitTest/inventorytest.cpp
+    UnitTest/inventorytests.cpp
     inventory.cpp
     Character.cpp 
 )
-
 
 ADD_EXECUTABLE(runGame
     main.cpp
