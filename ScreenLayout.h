@@ -29,6 +29,8 @@ class ScreenLayout
         void AttackPotionMsg(const Character &);
         void DefensePotionMsg(const Character &);
         void LightAttackMsg() const;
+        void choosenChar(int, Character & , Character &);
+        void basicStat(const Character & ); 
 
 };
 

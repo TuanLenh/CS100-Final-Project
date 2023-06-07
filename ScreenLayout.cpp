@@ -186,3 +186,33 @@ void ScreenLayout::LightAttackMsg() const
     cout << "Followed by a light attack" << endl << endl;
 
 }
+
+void ScreenLayout::choosenChar(int numPlayer, Character & c1, Character & c2)
+{
+    //Output the character of user choice in single-player mode
+    if (numPlayer == 1)
+    {
+        cout << "Player has choosen " << c1.getName() << endl;
+        basicStat(c1);
+    }
+    //Output the character of user choice in multiplayer mode
+    else if (numPlayer == 2)
+    {
+        cout << "Player 1 has choosen " << c1.getName() << endl;
+        basicStat(c1);
+        cout << "Player 2 has choosen " << c2.getName() << endl;
+        basicStat(c2);
+    }
+
+}
+
+//Output character's basic Stat
+void ScreenLayout::basicStat(const Character & c1) 
+{
+    cout << "Basic Stastistic: " << endl
+         << "SPD: " << c1.getSpeed() << endl
+         << "HP: " << c1.getHealth() << endl
+         << "ATK: " << c1.getAttack() << endl
+         << "DEF: " << c1.getDefense() << endl
+         << endl;
+}
