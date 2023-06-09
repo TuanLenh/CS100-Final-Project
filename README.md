@@ -73,7 +73,7 @@ The user is greeted with the main menu when the game starts, and the user has th
 
 In multi player mode, both users can enter their name, as well as pick characters through the Multiplayer Menu Screen, First player Name Screen, Second Player Name Screen, First Character Choosing Screen, and the Second Character Choosing Screen. Then, both users are prompted to the Battle Screen, where they can enter a number from 1-2 to perfrom the respective actions detailed above. The game ends when a character's health points reduces to zero, and the Battle End Screen announces the winner. The users are asked to enter "C" to return to Main Menu.
 
-## Class Diagram
+## Class Diagram (Prototype)
 
 The UML Class Diagram below consists of various important classes, each of which represnt a vital part of the program.
 
