@@ -34,7 +34,7 @@ There are various tools our group will utilize throughout the process of develop
 
 * [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - Gcov is a source code coverage analysis and statement-by-statement profiling tool. Gcov generates exact counts of the number of times each statement in a program is executed and annotates source code to add instrumentation.
 
-## What will be the input/output of our project?
+## What is the input/output of our project?
 
 * Input - In the game, the user will be able to enter a number from 1 to 10 to choose a favorite character. In single mode, the user will also need to enter 1 to 4 during a battle to choose an appropriate move. There are 4 moves for user to choose from: an attack skill, a defense skill, an ultimate skill, and the use of an item from inventory. In multiplayer mode, each user needs to enter 1 or 2 to pick their action moves. There are 2 moves that users can choose from: an attack skill and an ultimate skill that acquired by chosen characters.
 
