@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Character.h"
-#include "inventory.h"
+#include "Inventory.h"
 
 using namespace std;
 
