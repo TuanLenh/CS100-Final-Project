@@ -122,7 +122,7 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  * First option (single player mode) has been chosen and Character List gets displayed:
  <img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/420013e1-0174-4e02-a84b-4e1703da0827">
  
- * Character Basic Statistic and Action Options:
+ * Character Basic Statistic and Action Options for single-player mode:
 <img width="335" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/a7a756e6-97e1-4a07-b9c1-6e67218c906a">
 
  * First option (Attack) has been chosen:
@@ -139,6 +139,16 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
 
 * Fourth option (ultimate skill) has been chosen:
 <img width="973" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/861c2210-a7f9-41aa-919e-a10cf4f3a19f">
+
+* Leaderboard
+<img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/69f63bfe-8388-449e-a9fc-5e319d51e712">
+
+* Multi-player mode has been chosen
+<img width="345" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/d8976986-669b-4dc9-95ae-0bf6c26083a1">
+
+* Action option for multiplayer mode
+<img width="140" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/7f30f2c7-7811-4139-b756-1bd0d0055feb">
+
 
 
  ## Installation/Usage
