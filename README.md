@@ -116,7 +116,7 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  
  ## Screenshots
  
- Screenshots of the Input/oOutput after Running the Program
+ Below are the screenshots of the input/output after running the program.
  
 * Main Menu:
 <img width="351" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/0e55bc03-c247-4865-b0d2-74c0e29ff301">
@@ -152,14 +152,17 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
 <img width="140" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/7f30f2c7-7811-4139-b756-1bd0d0055feb">
 
 ## Installation/Usage
-The steps for installation is as follows
-1. Git installation: If Git is not insatlled on your computer, you will need to install and download it in order to access our repository. You can download it from https://git-scm.com/downloads .
-2. Acesss repository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
-3. Git clone: Use the git clone command followed by the URL of our repository (which can be found in the upper right hand corner on our repository page). This will in turn create a new directory with our repository name. After this to run our game enter the cmake and make commands in the terminal. 
-4. Git Pull: If there are any updates in our repository and you want to implement these newest changes, simply git pull command which will sucessfully fetch any new updates there are to the game.
+
+These are the steps for the installation/usage of the program.
+
+* First, Git will need to be installed on your local machine in order to clone the repository. If Git is not installed, visit [this site](https://git-scm.com/downloads) in order to download the appropriate version of Git for your device. If Git is already installed, you can proceed to the next step.
+* Second, VS Code will need to be installed on your local machine in order to run/navigate the program. If VS Code is not installed, visit [this site](https://code.visualstudio.com/download) in order to download the appropriate version of VS Code for your device. If it is already installed, you can proceed to the next step.
+* Once Git/VS Code are installed, you will be able to clone our repository. Click on the green "Code" button on the front page of the repository, and copy the "HTTPS" link. Once the link is copied, open the terminal window in VS Code, and type "git clone <paste-link-here>" in order to clone the repository.
+* Once the repository is cloned, in the terminal, run "cmake .", "make", and "./runGame".
+* Once the above commands are run, the program should start. Enjoy the game!
  
- ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.   
- * We use GoogleTest to debug/troubleshoot each of our implemented features. We chose it due to its autonomy and reliabity. GoogleTest is able to run each test case on different objects. In the case of a test failure, it has ability to execute the test indepentdently, which enables quick debugging.
- * We created various test cases for each implemented feature(test suite).
- * In Character unit test, we created 12 different test cases to verify Character functions get called approriately. 
+## Testing
+    
+We utilized the Google Test Framework to test each of our classes in detail. Each of our classes (excluding the ones with output responsibilities) is accompanied by a cpp file with a variety of unit tests for each function. These unit tests ensure the majority of our code functions as expected.
+
+We chose the Google Test Framework due to its autonomy, ease of use, and reliability. Google Test is able to work very well with C++, and it's extremely easy to learn. Furthermore, its structure allows for failing tests to be identified very easily for quick debugging.
