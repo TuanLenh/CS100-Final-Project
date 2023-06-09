@@ -116,43 +116,42 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  
  ## Screenshots
  
- Screenshots of the input/output after running your application
- * Main Menu:
- <img width="351" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/0e55bc03-c247-4865-b0d2-74c0e29ff301">
+ Screenshots of the Input/oOutput after Running the Program
  
- * First option (single player mode) has been chosen and Character List gets displayed:
- <img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/420013e1-0174-4e02-a84b-4e1703da0827">
+* Main Menu:
+<img width="351" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/0e55bc03-c247-4865-b0d2-74c0e29ff301">
  
- * Character Basic Statistic and Action Options for single-player mode:
+* The first Option (Single Player Mode) has been chosen, and the character list gets displayed.
+<img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/420013e1-0174-4e02-a84b-4e1703da0827">
+ 
+* Here are the characters' basic statistics, as well as the action options for Single Player Mode.
 <img width="335" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/a7a756e6-97e1-4a07-b9c1-6e67218c906a">
 
- * First option (Attack) has been chosen:
+* The first option (Attack) has been chosen.
 <img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/19c985a7-5ee6-4d77-b8c6-3fe6c694f00d">
 
-*  Or, second option (Defense) has been chosen:
+* Or, the second option (Defense) has been chosen.
 <img width="332" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/e1bb359c-94bd-4f76-90a7-298e3d7b9560">
 
-* Or, third option (inventory) has been chosen:
+* Or, third option (Inventory) has been chosen.
 <img width="354" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/26667ad3-8973-4e19-8859-ef9556a06529">
 
-* Health potion from inventory option has been used:
+* The health potion from the inventory has been used.
 <img width="329" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/a0802366-aa19-4423-a7ff-1af2ac4a6c5c">
 
-* Fourth option (ultimate skill) has been chosen:
+* The fourth option (Ultimate Skill) has been chosen.
 <img width="973" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/861c2210-a7f9-41aa-919e-a10cf4f3a19f">
 
-* Leaderboard
+* The Leaderboard displays the top five scorers in the game.
 <img width="362" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/69f63bfe-8388-449e-a9fc-5e319d51e712">
 
-* Multi-player mode has been chosen
+* Multi Player Mode has been chosen.
 <img width="345" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/d8976986-669b-4dc9-95ae-0bf6c26083a1">
 
-* Action option for multiplayer mode
+* The "Action" Option for Multi Player Mode
 <img width="140" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/7f30f2c7-7811-4139-b756-1bd0d0055feb">
 
-
-
- ## Installation/Usage
+## Installation/Usage
 The steps for installation is as follows
 1. Git installation: If Git is not insatlled on your computer, you will need to install and download it in order to access our repository. You can download it from https://git-scm.com/downloads .
 2. Acesss repository: Once Git is sucessfully installed on your computer, open the Git terminal and navigate to the directory where you want to clone our repository.
