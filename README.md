@@ -166,6 +166,6 @@ These are the steps for the installation/usage of the program.
  
 ## Testing
     
-We utilized the Google Test Framework to test each of our classes in detail. Each of our classes (excluding the ones with output responsibilities) is accompanied by a cpp file with a variety of unit tests for each function. These unit tests ensure the majority of our code functions as expected.
+We utilized the [Google Test Framework](https://github.com/google/googletest) to test each of our classes in detail. Each of our classes (excluding the ones with output responsibilities) is accompanied by a cpp file with a variety of unit tests for each function. These unit tests ensure the majority of our code functions as expected.
 
 We chose the Google Test Framework due to its autonomy, ease of use, and reliability. Google Test is able to work very well with C++, and it's extremely easy to learn. Furthermore, its structure allows for failing tests to be identified very easily for quick debugging.
