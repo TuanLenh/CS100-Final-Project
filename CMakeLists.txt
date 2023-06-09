@@ -32,7 +32,7 @@ ADD_EXECUTABLE(testUltimateClass
 
 ADD_EXECUTABLE(testInventoryClass
     UnitTest/InventoryTest.cpp
-    inventory.cpp
+    Inventory.cpp
     Character.cpp 
 )
 
