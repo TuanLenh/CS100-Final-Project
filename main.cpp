@@ -426,7 +426,8 @@ int main(){
             //Check for valid input
             charNum = checkCharacterSelectionInput(charNum);
             Character userChar = selectChar(Mario, Luigi, Peach, Bowser_Jr, Kirby, Sonic, Cinderella, McQueen, Mater, SpongeBob, charNum);
-            
+            output.choosenChar(1, userChar, Boss1);
+
             //Run the game until the player or the Boss1 dies.
             while(userChar.isAlive() == true and Boss1.isAlive() == true){
                 // print turn, ask for user's choice of action and check for valid input
@@ -607,6 +608,7 @@ int main(){
             cin >> userTwoChar;
             userTwoChar = checkCharacterSelectionInputTwo(userTwoChar, userOneChar);
             Character userChar2 = selectChar(Mario, Luigi, Peach, Bowser_Jr, Kirby, Sonic, Cinderella, McQueen, Mater, SpongeBob, userTwoChar);
+            output.choosenChar(2, userChar1, userChar2);
             
             // print turn, ask for user's choice of action and check for valid input
             // Case 1: first player goes first
