@@ -32,7 +32,7 @@ There are various tools our group will utilize throughout the process of develop
 
 * [Google Test Framework](https://github.com/google/googletest) - The Google Test Framework is a variety of tools developed by Google in order to assist developers with creating/running a diverse volume of test cases to ensure the program works effectively, and all expected outputs are present.
 
-* [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - Gcov is a source code coverage analysis and statement-by-statement profiling tool. Gcov generates exact counts of the number of times each statement in a program is executed and annotates source code to add instrumentation.
+
 
 ## What is the input/output of our project?
 
