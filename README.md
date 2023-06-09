@@ -87,19 +87,19 @@ In terms of the relationships between the classes, inheritance is definitely app
 
 ![CS100 - UML Class Diagram](https://user-images.githubusercontent.com/79182581/237007095-f9d2cd9c-a106-4a8a-a0eb-e2954793fab9.png)
 
-## Class Diagram (Revised)
+## Class Diagram (Updated)
 
 The revised UML class diagram below is vastly different from the original UML class diagram above. Many of the classes were simplified for a better overall program structure, and the specifics of each class are more detailed.
 
 The first, and possibly most important, class is the "Character" class. This class handles the various characteristics of each character, such as the character's name, attack, defense, and speed. There are getters/setters for each of these characteristics, and another function to determine whether the character is alive or not.
 
-The "Character" class is composed of three different classes: the "UltimateSkill" class, the "GameEngine" class, and the "ReturnStat" class. The "UltimateSkill" class is responsible for handling the ultimate skill of each character; there are a few different ones depending on each character, like a healing power, an increased attack, an increased defense, etc. The "GameEngine" class handles the attack for each character, which is slightly different depending on the character chosen due to the different attack statistics. Finally, the "ReturnStat" class ensures the statistics for each character are returned to their original levels after a battle is complete. The "composition" association is extremely important here, as if the "Character" class were deleted, there would be no use for "UltimateSkill", "GameEngine", and "ReturnStat"; essentially, these three classes would be useless, as they require Character objects for proper functionality.
+The "Character" class is composed of four different classes: the "Inventory" class, the "UltimateSkill" class, the "GameEngine" class, and the "ReturnStat" class. The "Inventory" class is responsible for handling the inventory system in the game; each character is allowed to utilize a health potion, an attack potion, or a defense potion. The "UltimateSkill" class is responsible for handling the ultimate skill of each character; there are a few different ones depending on each character, like a healing power, an increased attack, an increased defense, etc. The "GameEngine" class handles the attack for each character, which is slightly different depending on the character chosen due to the different attack statistics. Finally, the "ReturnStat" class ensures the statistics for each character are returned to their original levels after a battle is complete. The "composition" association is extremely important here, as if the "Character" class were deleted, there would be no use for "Inventory", "UltimateSkill", "GameEngine", and "ReturnStat"; essentially, these three classes would be useless, as they require Character objects for proper functionality.
 
 The "Leaderboard" class handles the functionality for the leaderboard in the single player mode of the game, such as adding new players to the leaderboard, updating the scores of existing players, and sorting the leaderboard. The "Player" struct is extremely important for the functionality of this class, as it allows for the player's name, as well as the player's score, to be managed efficiently through the use of vectors. As a result, the "Player" struct has an aggregation relationship with the "Leaderboard" class.
 
 Finally, the "ScreenLayouts" class is responsible for printing the various prompts our program utilizes. It prints the enus for each type of game mode, the battle actions, the victory screens, and the defeat screens.
 
-<img width="913" alt="CS100 - UML Diagram (Revised)" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/b92da672-89fd-4a77-b571-55becfb7e72a">
+![CS100 - UML Diagram (Final)](https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129999279/d601e8a7-41ad-4b9b-8506-0eb300f88f48)
 
 ## SOLID Principles
 
@@ -115,7 +115,8 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ 
+ Screenshots of the input/output after running your application
  * Main Menu:
  <img width="351" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/0e55bc03-c247-4865-b0d2-74c0e29ff301">
  
