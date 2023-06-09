@@ -6,8 +6,8 @@
 #include "ScreenLayout.h"
 #include "ReturnStat.h"
 #include "Leaderboard.h"
-#include "AttackFunction.h"
-#include "Inventory.h"
+#include "attackfunction.h"
+#include "inventory.h"
 
 using namespace std;
 

@@ -3,8 +3,8 @@ ADD_SUBDIRECTORY(googletest)
 
 
 ADD_EXECUTABLE(testAttackFunctionClass
-    UnitTest/attackFunctionTest.cpp
-    AttackFunction.cpp
+    UnitTest/attackfunction.cpp
+    attackfunction.cpp
     Character.cpp
 )
 
@@ -31,8 +31,8 @@ ADD_EXECUTABLE(testUltimateClass
 )
 
 ADD_EXECUTABLE(testInventoryClass
-    UnitTest/InventoryTest.cpp
-    Inventory.cpp
+    UnitTest/inventorytests.cpp
+    inventory.cpp
     Character.cpp 
 )
 
@@ -43,8 +43,8 @@ ADD_EXECUTABLE(runGame
     ScreenLayout.cpp
     Ultimate.cpp
     Leaderboard.cpp
-    AttackFunction.cpp
-    Inventory.cpp
+    attackfunction.cpp
+    inventory.cpp
 )
 
 TARGET_LINK_LIBRARIES(testReturnStatClass gtest gtest_main)
