@@ -700,5 +700,5 @@ int main(){
     return 0; 
 }
 
-// Need to implement: inventory, ultimate skill output message
-//fix bugs in multiplayer modes and HP>=0
+// to run Valgrind: g++ -g -O0 main.cpp Character.cpp ReturnStat.cpp ScreenLayout.cpp Ultimate.cpp Leaderboard.cpp attackfunction.cpp inventory.cpp -o ./runGame
+// then valgrind ./runGame
