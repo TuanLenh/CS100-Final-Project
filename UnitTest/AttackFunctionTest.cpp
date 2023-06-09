@@ -1,4 +1,4 @@
-#include "../attackfunction.h"
+#include "../AttackFunction.h"
 #include "gtest/gtest.h"
 #include "../Character.h"
 
