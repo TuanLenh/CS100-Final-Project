@@ -148,8 +148,11 @@ Finally, the "ScreenLayouts" class is responsible for printing the various promp
 * Multi Player Mode has been chosen.
 <img width="345" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/d8976986-669b-4dc9-95ae-0bf6c26083a1">
 
-* The "Action" Option for Multi Player Mode
+* The Action Option for Multi Player Mode
 <img width="140" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/7f30f2c7-7811-4139-b756-1bd0d0055feb">
+
+* Result Screen for Multi Player Mode
+<img width="381" alt="image" src="https://github.com/cs100/final-project-asura003-arama035-tho076-tlenh002/assets/129914389/32ca3e9a-cbe3-46af-879e-1d0b9a1c1ef0">
 
 ## Installation/Usage
 
