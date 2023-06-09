@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "../Character.h"
-#include "../inventory.h"
+#include "../Inventory.h"
 
 TEST(CharacterPotionTests, UseHealthPotion) {
     Inventory potion;
